@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>来自南浦月的WINE QQ2012 | 南浦月</title>
+  <meta name="author" content="南浦月">
+
+  
+  <meta name="description" content="本文的最新版本在http://blog.nanpuyue.com/2013/025.html  
+本版wineqq基于QQ2012 Beta3(4786)，已在Ubuntu 12.04&amp;12.10下测试通过，同时支持32位和64位操作系统。  
+下载地址：
+deb包
+2013年2月13日：w">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="南浦月" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35959106-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/live">直播</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">来自南浦月的WINE QQ2012</h1>
+  
+
+    <time datetime="2013-01-18T01:49:00.000Z">
+  <span class="day">18</span><span class="month">1月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>本文的最新版本在<a href="http://blog.nanpuyue.com/2013/025.html">http://blog.nanpuyue.com/2013/025.html</a>  </p>
+<p><strong>本版wineqq基于QQ2012 Beta3(4786)，已在Ubuntu 12.04&amp;12.10下测试通过，同时支持32位和64位操作系统。</strong>  </p>
+<h2 id="下载地址：">下载地址：</h2>
+<h4 id="deb包">deb包</h4>
+<p>2013年2月13日：wine-qq2012-nanpuyue_2013-2-13.deb<br><a href="http://s.yunio.com/FMRdMx" target="_blank">http://s.yunio.com/FMRdMx</a>(云诺)<br>md5sum：78a08830579a5dd8023092e94c87bf8f<br>更新内容：  </p>
+<ul>
+<li>不再集成QQ安装包及微软的dll,所需文件均改由互联网获取</li>
+<li>历史版本不再提供下载</li>
+</ul>
+<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong>  </p>
+<h2 id="deb包安装：">deb包安装：</h2>
+<p>64位系统差一个共享厍文件并且还需要安装ia32-libs：  </p>
+<pre><code>sudo wget <span class="attribute">-P</span> <span class="string">'/usr/lib/i386-linux-gnu/pkcs11'</span> <span class="string">'http://files.nanpuyue.com/ubuntu/wineqq/so/gnome-keyring-pkcs11.so'</span>
+sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">-libs</span>
+</code></pre><p><strong>安装有几点注意：</strong>  </p>
+<ul>
+<li>不要双击打开安装，一定要使用命令安装</li>
+<li>安装脚本会自动关闭所有Wine程序，请自己先关闭所有Wine程序，以免造成信息丢失</li>
+<li>再重复一遍，一定不要双击打开安装，否则可能造成安装无法完成</li>
+</ul>
+<p>使用以下命令安装：  </p>
+<pre><code>sudo dpkg <span class="attribute">-i</span> <span class="built_in">.</span>/wine<span class="attribute">-qq2012</span><span class="attribute">-nanpuyue_2013</span><span class="subst">-</span><span class="number">2</span><span class="subst">-</span><span class="number">13.</span>deb
+</code></pre><p>如果你非要双击使用软件中心安装，则无法完成配置，需要安装完成后使用下面的命令完成配置：  </p>
+<pre><code>qq2012 <span class="keyword">install</span>
+</code></pre><p>或者  </p>
+<pre><code>sudo dpkg<span class="attribute">-reconfigure</span> wine<span class="attribute">-qq2012</span><span class="attribute">-nanpuyue</span>
+</code></pre><p>如果你以root用户登录，则安装时也不会进行配置，只能通过下面的命令配置：  </p>
+<pre><code>qq2012 <span class="keyword">install</span>
+</code></pre><p>配置完成后，不出意外会在桌面生成快捷方式，如果没有快捷方式，或者你喜欢，也可以使用命令启动QQ：  </p>
+<pre><code>qq2012 <span class="operator"><span class="keyword">start</span></span>
+</code></pre><p>桌面快捷方式，上面那个可以删除，双击即可打开QQ<br><img src="https://lh5.googleusercontent.com/-LDeedfJACTI/UfCNfGAgt7I/AAAAAAAAAbs/Hd1FoBsOj-0/s0/快捷方式.png" alt="快捷方式"><br>登录界面，密码框不会崩溃<br><img src="https://lh6.googleusercontent.com/-AFdaTz8wWG0/UfCNhicDxzI/AAAAAAAAAcI/5LiphBN5Wbs/s0/登录界面.png" alt="登录界面"><br><strong>关闭自动更新</strong><br>主面板，没有黑框和残影，<strong>现在要做的第一件事应该是取消自动更新，因为更新会造成QQ无法打开！</strong><br><img src="https://lh4.googleusercontent.com/-5n51gQO6BRI/UfCNfXCy_MI/AAAAAAAAAbo/S92bWQ8AuAw/s0/主面版.png" alt="主面板"><br><strong>如果面板上已经出现软件更新的图标，请直接在上面单击右键，然后点“退出”，再继续下面的设置：</strong><br><img src="https://lh4.googleusercontent.com/-vInMlEwXcE0/UfCNizP8FgI/AAAAAAAAAcU/qt8LMhJi2QY/s0/退出更新.png" alt="退出更新"><br>单击你的头像，进入设置，再单击“系统设置”<br><img src="https://lh6.googleusercontent.com/-rHo9rhJ_6Ts/UfCNhh8bJkI/AAAAAAAAAcE/P0D5sEjBlhc/s0/设置.png" alt="设置"><br>单击“基本设置”下的“软件更新”，选<strong>“有更新时不要安装，但提醒我”</strong>，然后“确定”<br><img src="https://lh3.googleusercontent.com/-TGtH6ZarCPU/UfCNjG3q3-I/AAAAAAAAAcY/0EQuNcM7gWs/s0/软件更新设置.png" alt="软件更新设置"><br><strong>可以调用系统字体</strong><br><img src="https://lh5.googleusercontent.com/-o8LNDdVzr7Y/UfCNh1ftb9I/AAAAAAAAAcQ/NBX5g91DnQA/s0/调用系统字体.png" alt="调用系统字体"><br>文件发送和接收都是正常的<br><img src="https://lh6.googleusercontent.com/-cuK9ObbaBMw/UfCNgbQQ6XI/AAAAAAAAAb4/43MdxIBXNQs/s0/文件发送.png" alt="文件发送"><br>除本地视频可能不可用以外，其他功能也基本正常，也不会无故崩溃，欢迎测试。<br>还有两个推荐设置，按下图设置后，可以最小化QQ，单击Ubuntu面板上的QQ图标即可呼出：<br><img src="https://lh5.googleusercontent.com/-f1b_tYAF6BM/UfCNfAmkoxI/AAAAAAAAAbk/SG45LKZmbdE/s0/推荐设置.png" alt="推荐设置">  </p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Linux/">Linux</a><a href="/categories/Linux/Ubuntu/">Ubuntu</a></div>
+
+      
+      
+    </footer>
+    
+  </div>
+  
+<section id="comment">
+  <div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+    <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>
+  
+  
+    <a class="google" href="https://plus.google.com/+nanpuyue" title="Google+">Google+</a>
+  
+  
+    <a class="twitter" href="https://twitter.com/nanpuyue" title="Twitter">Twitter</a>
+  
+  
+    <a class="github" href="https://github.com/nanpuyue" title="GitHub">GitHub</a>
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+<div align="left">
+  
+  &copy; 2012-2014 <a href="http://blog.nanpuyue.com"> 南浦月 </a>
+  
+</div>
+
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'nanpuyue';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

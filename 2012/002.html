@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu 12.04下编译OpenWrt教程 | 南浦月</title>
+  <meta name="author" content="南浦月">
+
+  
+  <meta name="description" content="搭建编译环境
+Ubuntu x64 12.04下的命令：  
+sudo apt-get install subversion
+sudo apt-get install git
+sudo apt-get install flex
+sudo apt-get install g++
+sudo apt-ge">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="南浦月" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35959106-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/live">直播</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">Ubuntu 12.04下编译OpenWrt教程</h1>
+  
+
+    <time datetime="2012-03-22T04:00:00.000Z">
+  <span class="day">22</span><span class="month">3月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <h3 id="搭建编译环境">搭建编译环境</h3>
+<p>Ubuntu x64 12.04下的命令：  </p>
+<pre><code>sudo apt<span class="attribute">-get</span> install subversion
+sudo apt<span class="attribute">-get</span> install git
+sudo apt<span class="attribute">-get</span> install flex
+sudo apt<span class="attribute">-get</span> install g<span class="subst">++</span>
+sudo apt<span class="attribute">-get</span> install gawk
+sudo apt<span class="attribute">-get</span> install zlib1g<span class="attribute">-dev</span>
+sudo apt<span class="attribute">-get</span> install libncurses5<span class="attribute">-dev</span>
+</code></pre><p>当然，也可以将上面的命令合起来：  </p>
+<pre><code>sudo apt<span class="attribute">-get</span> install subversion git flex g<span class="subst">++</span> gawk zlib1g<span class="attribute">-dev</span> libncurses5<span class="attribute">-dev</span>
+</code></pre><h3 id="建立工作目录及获取openwrt源码">建立工作目录及获取openwrt源码</h3>
+<pre><code>mkdir openwrt
+cd openwrt
+svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
+</code></pre><p>trunk是openwrt的开发版，openwrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的openwrt中文论坛所建的镜像。</p>
+<h3 id="更新feed及添加package">更新feed及添加package</h3>
+<p>openwrt的一些额外功能都是通过package实现的，很多个package就组成了一个feed，我们可以根据需求更新自己想要的feed的源。 例如我们需要luci的web管理界面和python的支持，那么我们需要更新luci和packages的feed源：  </p>
+<pre><code><span class="built_in">cd</span> trunk
+./scripts/feeds update luci packages
+./scripts/feeds install luci packages
+</code></pre><p>当然，我们推荐更新所有feed并添加所有package  </p>
+<pre><code>./scripts/feeds update <span class="operator">-a</span>
+./scripts/feeds install <span class="operator">-a</span>
+</code></pre><h3 id="配置及编译">配置及编译</h3>
+<p>进入配置界面  </p>
+<pre><code><span class="built_in">make</span> menuconfig
+</code></pre><p>以后再次编译时，要先切换到工作目录：  </p>
+<pre><code><span class="built_in">cd</span> openwrt
+<span class="built_in">cd</span> trunk
+</code></pre><p>然后在次过程中选择好target system和target profile，target system需要看你路由器的cpu芯片信息，target profile是你路由器的型号。接下来就可以根据自己的需求进行定制了，添加上需要的支持或去掉无用的包，按“Y”在固件中添加包按“Y”,按“N”去 掉不需要的包。<br>要运行OH3C，必须有python-mini（lang-&gt;python-&gt;python-mini)的支持。<br>如果你的路由器flash空间比较紧张，可以去掉下面的包:  </p>
+<ul>
+<li>Kernel modules-&gt;Network Support-&gt;kmod-ppp</li>
+<li>Network-&gt;ppp</li>
+</ul>
+<p>选好后就保存配置退出开始编译了：  </p>
+<pre><code>make <span class="attribute">-j</span>
+</code></pre><p>-j 后面可以跟参数，即同时进行的任务数，比如2或4，不跟参数意为不限制同时进行的任务数，会大大减少编译的时间，特别是首次编译。<br>编译过程中可能不会下载一些东西，所以断网可能造成编译中断，编译所需时间与你的CPU及网速有很大关系，一般首次编译在40分钟到2小时之间不等。以后的编译一般在30分钟之内。</p>
+<h3 id="生成的固件在~/openwrt/trunk/bin/XXXXX目录下。">生成的固件在~/openwrt/trunk/bin/XXXXX目录下。</h3>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Linux/">Linux</a><a href="/categories/Linux/OpenWrt/">OpenWrt</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/OpenWrt/">OpenWrt</a><a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/教程/">教程</a><a href="/tags/编译/">编译</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+<section id="comment">
+  <div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+    <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>
+  
+  
+    <a class="google" href="https://plus.google.com/+nanpuyue" title="Google+">Google+</a>
+  
+  
+    <a class="twitter" href="https://twitter.com/nanpuyue" title="Twitter">Twitter</a>
+  
+  
+    <a class="github" href="https://github.com/nanpuyue" title="GitHub">GitHub</a>
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+<div align="left">
+  
+  &copy; 2012-2014 <a href="http://blog.nanpuyue.com"> 南浦月 </a>
+  
+</div>
+
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'nanpuyue';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Virtual Disk Development Kit挂载虚拟磁盘 | 南浦月</title>
+  <meta name="author" content="南浦月">
+
+  
+  <meta name="description" content="如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。官方下载页面：vSphere 5.0.1 Virtual Disk Development KitvSphere 5.0.2 Virtual Disk Developme">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="南浦月" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35959106-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/live">直播</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">使用Virtual Disk Development Kit挂载虚拟磁盘</h1>
+  
+
+    <time datetime="2012-05-28T04:00:00.000Z">
+  <span class="day">28</span><span class="month">5月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。<br>官方下载页面：<br><a href="http://goo.gl/M5n3o" target="_blank">vSphere 5.0.1 Virtual Disk Development Kit</a><br><a href="http://goo.gl/aYNS1" target="_blank">vSphere 5.0.2 Virtual Disk Development Kit</a><br>要在官方下载，需要注册并登录，读者请自行完成。<br>下载后首先安装，Windows下安装很简单，Linux下的安装下面会讲，以Ubuntu 12.04为例。<br>Windows下和Linux下的用法大同小异，我只举出几个例子。  </p>
+<h2 id="Windows">Windows</h2>
+<p>使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。<br>但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:<br>单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  </p>
+<pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>
+</code></pre><p>我们添加后变成：  </p>
+<pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>;C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin
+</code></pre><p>这样以后要使用挂载的命令就不必进入安装目录，而是可以直接使用。<br>要挂载一个虚拟磁盘：  </p>
+<pre><code>vmware-mount <span class="constant">Z</span><span class="symbol">:</span> <span class="constant">D</span><span class="symbol">:ubuntu</span>.vmdk /<span class="symbol">v:</span><span class="number">1</span>
+</code></pre><p>注意路径中有空格的要用引号把路径括起来，这样ubuntu.vmdk中的第一个卷就会被挂载到Z:，/v:1可以省略，默认为1，如果要挂载虚拟磁盘中的第二个卷就必须加上/v:2。<br>卸载：  </p>
+<pre><code>vmware<span class="attribute">-mount</span> Z: /d
+</code></pre><p>列出当前挂载的虚拟磁盘：  </p>
+<pre><code>vmware<span class="attribute">-mount</span> /L
+</code></pre><p>或者  </p>
+<pre><code>vmware<span class="attribute">-mount</span>
+</code></pre><p>其余命令就不介绍了，使用vmware-mount /?查看帮助。  </p>
+<h2 id="Linux">Linux</h2>
+<p>先将下载所得VMware-vix-disklib-*.tar.gz解压，比如解压到桌面，然后打开终端，进入解压所得的目录，安装：  </p>
+<pre><code><span class="built_in">sudo</span> ./vmware-install.pl
+</code></pre><p>期间需要按很多次回车，建议先一直按住回车键，直到询问 yes 或 no 时，输入 y ,回车，然后会询问安装位置，默认是/usr，直接回车使用默认值，安装即完成。<br>在Linux下，可能会出现VixDiskLib: Failed to load libvixDiskLibVim.so: Error = …的错误，解决方法如下：  </p>
+<pre><code><span class="built_in">sudo</span> sh -c <span class="string">"echo /usr/lib/vmware-vix-disklib/lib64&gt;/etc/ld.so.conf.d/x86_x64-vmware-vix-disklib.conf"</span>
+<span class="built_in">sudo</span> sh -c <span class="string">"echo /usr/lib/vmware-vix-disklib/lib32&gt;/etc/ld.so.conf.d/i386-vmware-vix-disklib.conf"</span>
+<span class="built_in">sudo</span> ldconfig
+</code></pre><p>具体需要视你的系统而定，32位系统就不用建立x86_x64-vmware-vix-disklib.conf，64位系统也可以不建立i386-vmware-vix-disklib.conf，但是ldconfig是一定要执行的。<br>另外提醒下，”x86_x64-vmware-vix-disklib.conf”这个文件名前面的”x86_x64-“前缀是一定要有的，不要去掉，否则会有各种问题产生。<br>挂载：  </p>
+<pre><code><span class="built_in">sudo</span> vmware-mount ~/Virtualbox/windows.vhd <span class="number">1</span> ~/windows
+</code></pre><p>其中1是要挂载的卷，~/windows是挂载点，挂载点其实就是文件夹，一定要事先建好，~表示用户目录，比如我的用户名是nanpuyue，那么~/windows也可以写成/home/nanpuyue/windows，路径中有空格的要用引号把路径括起来。<br>卸载：  </p>
+<pre><code><span class="built_in">sudo</span> vmware-mount <span class="operator">-d</span> ~/windows
+</code></pre><p>另外，在Linux中要卸载Virtual Disk Development Kit，使用命令下面的命令：  </p>
+<pre><code>sudo vmware<span class="attribute">-uninstall</span><span class="attribute">-vix</span><span class="attribute">-disklib</span><span class="built_in">.</span>pl
+</code></pre><p>或者：  </p>
+<pre><code>sudo /usr/bin/vmware<span class="attribute">-uninstall</span><span class="attribute">-vix</span><span class="attribute">-disklib</span><span class="built_in">.</span>pl
+</code></pre><p>查看帮助：  </p>
+<pre><code>vmware<span class="attribute">-mount</span>
+</code></pre><p>或者  </p>
+<pre><code><span class="comment">vmware</span><span class="literal">-</span><span class="comment">mount</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">help</span>
+</code></pre><p>更新历史：<br>2013-1-3:添加vSphere 5.0.2 Virtual Disk Development Kit下载地址，其他修正。</p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/虚拟化/">虚拟化</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/Linux/">Linux</a><a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/虚拟化/">虚拟化</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+<section id="comment">
+  <div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+    <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>
+  
+  
+    <a class="google" href="https://plus.google.com/+nanpuyue" title="Google+">Google+</a>
+  
+  
+    <a class="twitter" href="https://twitter.com/nanpuyue" title="Twitter">Twitter</a>
+  
+  
+    <a class="github" href="https://github.com/nanpuyue" title="GitHub">GitHub</a>
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+<div align="left">
+  
+  &copy; 2012-2014 <a href="http://blog.nanpuyue.com"> 南浦月 </a>
+  
+</div>
+
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'nanpuyue';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

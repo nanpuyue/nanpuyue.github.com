@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>TP-LINK TL-WR720N V3刷回原厂固件 | 南浦月</title>
+  <meta name="author" content="南浦月">
+
+  
+  <meta name="description" content="这里要讲的，是TP-LINK TL-WR720N V3无线路由器已经刷了OpenWrt的情况下刷回TP-LINK原厂固件的方法。  
+TP-LINK官方目前提供两个版本的原厂固件下载：TL-WR720N V3_120620标准版：http://service.tp-link.com.cn/detai">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="南浦月" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35959106-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/live">直播</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">TP-LINK TL-WR720N V3刷回原厂固件</h1>
+  
+
+    <time datetime="2013-02-14T05:14:00.000Z">
+  <span class="day">14</span><span class="month">2月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>这里要讲的，是TP-LINK TL-WR720N V3无线路由器已经刷了OpenWrt的情况下刷回TP-LINK原厂固件的方法。  </p>
+<p>TP-LINK官方目前提供两个版本的原厂固件下载：<br>TL-WR720N V3_120620标准版：<br><a href="http://service.tp-link.com.cn/detail_download_846.html" target="_blank">http://service.tp-link.com.cn/detail_download_846.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin</a>(备用下载)<br>md5sum：<code>43a21a63749479301c495d6b3759e3c7</code><br>TL-WR720N V3_120913标准版：<br><a href="http://service.tp-link.com.cn/detail_download_918.html" target="_blank">http://service.tp-link.com.cn/detail_download_918.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin</a>(备用下载)<br>md5sum：<code>1855f08a4e98f8633a16d5b7102309ac</code>  </p>
+<p>刷回原厂固件也很简单，只要直接在OpenWrt的Web界面升级即可，但是也有几个要注意的地方，否则可能成“砖”！  </p>
+<ul>
+<li>只刷经过验证可刷的固件</li>
+<li>最好先恢复OpenWrt的设置，如果有U盘，也最好先拔掉，并在重启完成后上传固件</li>
+<li>上传固件时一定要去掉“保留配置”的选项</li>
+<li>固件上传后仔细确认校验码确保无误</li>
+<li>固件刷新时绝对不能断电</li>
+</ul>
+<p>先说第一条，官方的两个固件版本，120620版的就是经过验证的固件，可刷；而120913版的，就是未经验证的固件，我也不敢验证。细心的同鞋可能会发现两个固件大小有明显差异，具体原因我不确定，不过据说120913版是ver 1.7的硬件专用的。<br>固件版本的问题，搞得不好是要让路由器成砖的，我宁愿先刷120620版再升级120913版(我没有试过)，也不敢直接刷回120913版，事实上，在OpenWrt的Web界面，120913版的固件也是不能通过验证的。也许你可以使用mtd之类的命令强行刷入，但是这样成砖的风险回更大！  </p>
+<p>然后是“保留配置”的选项，这个一定不能选，否则同样可能成砖！  </p>
+<p>校验码也很重要，因为在固件的下载、复制、移动、上传等各个环节都有可能出错导致固件损坏，只有校验码完全一致，才能保证路由器接收到的固件是正确的。<br><img src="https://lh3.googleusercontent.com/-2r1-rRn1lU4/UfAMQHGyeoI/AAAAAAAAAVQ/3XWV54OqseM/s0/720%E5%8E%9F%E5%8E%82%E5%9B%BA%E4%BB%B6.png" alt="720原厂固件MD5"><br>再次确认下方是否有“配置文件将被删除”的提示，如果提示的是“配置文件将被保留”，请点取消。  </p>
+<p>整个固件刷新过程可能需要4到5分钟或者更长，一定耐心等待，不能强行断电，有条件的可以使用接触良好的Micro-USB线连接移动电源或带电池笔记本供电，以防突然停电。  </p>
+<p>最后，要注意的是，官方固件的Web管理界面的默认地址是<a href="http://192.168.1.253" target="_blank">http://192.168.1.253</a>。  </p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Linux/">Linux</a><a href="/categories/Linux/OpenWrt/">OpenWrt</a></div>
+
+      
+      
+    </footer>
+    
+  </div>
+  
+<section id="comment">
+  <div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+    <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>
+  
+  
+    <a class="google" href="https://plus.google.com/+nanpuyue" title="Google+">Google+</a>
+  
+  
+    <a class="twitter" href="https://twitter.com/nanpuyue" title="Twitter">Twitter</a>
+  
+  
+    <a class="github" href="https://github.com/nanpuyue" title="GitHub">GitHub</a>
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+<div align="left">
+  
+  &copy; 2012-2014 <a href="http://blog.nanpuyue.com"> 南浦月 </a>
+  
+</div>
+
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'nanpuyue';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

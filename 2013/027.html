@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>基于OpenWrt的Linux无盘工作站方案 | 南浦月</title>
+  <meta name="author" content="南浦月">
+
+  
+  <meta name="description" content="本文要介绍的，是在使用OpenWrt的无线路由器上搭建服务器并以此启动计算机并运行桌面应用的一套方案。  
+整个方案要用到的硬件：  
+
+一个刷好OpenWrt的带USB接口和有线网络接口的无线路由器(TP-LINK TL-WR720N V3)
+一个U盘(PNY 8G)
+一根双绞交叉网线
+一台支持网">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="南浦月" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35959106-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/live">直播</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">基于OpenWrt的Linux无盘工作站方案</h1>
+  
+
+    <time datetime="2013-02-14T14:29:00.000Z">
+  <span class="day">14</span><span class="month">2月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>本文要介绍的，是在使用OpenWrt的无线路由器上搭建服务器并以此启动计算机并运行桌面应用的一套方案。  </p>
+<p>整个方案要用到的硬件：  </p>
+<ul>
+<li>一个刷好OpenWrt的带USB接口和有线网络接口的无线路由器(TP-LINK TL-WR720N V3)</li>
+<li>一个U盘(PNY 8G)</li>
+<li>一根双绞交叉网线</li>
+<li>一台支持网络启动的电脑(Acer 4738G)</li>
+</ul>
+<p>本方案使用的系统为Ubuntu，对版本没有特别的要求，但早期的版本不保证一定能成功，所以首先要准备Ubuntu的Live CD的iso镜像，我使用的是ubuntu-12.04.1-desktop-amd64.iso，如果你的电脑的内存不是很大(我的6G)建议使用32位的镜像。  </p>
+<p>下面正式进入实际操作，第一步是挂载U盘，这个可以灵活一些，我的情况是路由器只有4M Flash空间，不足以安装我所需的所有软件包，所以我将U盘分为三个分区：  </p>
+<ul>
+<li>/dev/sda1    ext4    512M</li>
+<li>/dev/sda2    swap    16M</li>
+<li>/dev/sda3    ntfs    6.89G</li>
+</ul>
+<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。  </p>
+<p>如果你的路由器剩余空间足够大到可以安装下面的软件包，你可以不用挂载U盘分区到<code>/overlay</code>。总之，在确保路由器有足够空间安装所需软件包后安装<code>nfs-kernel-server-utils</code>即可。<br>    opkg update<br>    opkg install nfs-kernel-server-utils<br>这样，路由器会自动安装<code>nfs-kernel-server-utils</code>及其依赖，当然，在安装是有可能出现内核模块(kmod-*)不能安装的问题，这不在本文的讨论范围。  </p>
+<p>安装好所需软件包后，就是文件的就位和各种配置了。首先你要确定文件存放位置，这里涉及到两个文件夹，一个是网络启动相关的，一个是nfs相关的，前者用于存放网络启动引导文件，后者用于存放Ubuntu的spuashfs文件系统。当然，它们可以是同一个文件夹，但是我并不推荐那样做。  </p>
+<p>最后，我的两个文件夹分别是<code>/mnt/sda3/tftproot</code>和<code>/mnt/sda3/nfsroot</code>。  </p>
+<p>然后是上传文件，具体怎么上传，没有要求，只要能将文件放到指定位置即可，可以是scp、ftp、或者通过samba，甚至是将U盘直接查到电脑上复制，都没有关系。  </p>
+<p>将Ubuntu Live CD中的<code>casper</code>上传到<code>/mnt/sda3/nfsroot</code>，而<code>/mnt/sda3/tftproot</code>下则需要有以下文件：</p>
+<ul>
+<li>pxelinux.0</li>
+<li>vesamenu.c32</li>
+<li>vmlinuz</li>
+<li>initrd.lz</li>
+</ul>
+<p>其中<code>pxelinux.0</code>和<code>vesamenu.c32</code>可以通过下载得到，我是从Debian的ftp上下载到的：<br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/pxelinux.0">pxelinux.0</a><br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/debian-installer/i386/boot-screens/vesamenu.c32">vesamenu.c32</a>  </p>
+<p>而<code>vmlinuz</code>和<code>initrd.lz</code>则来自Ubuntu Live CD下的<code>casper</code>目录。  </p>
+<p>然后还需要在<code>/mnt/sda3/tftproot</code>下新建目录<code>pxelinux.cfg</code>目录，并在<code>pxelinux.cfg</code>下新建文件<code>default</code>：  </p>
+<pre><code><span class="title">cd</span> /mnt/sda3/tftproot
+<span class="title">mkdir</span> pxelinux.cfg
+<span class="title">vi</span> pxelinux.cfg/<span class="default"><span class="keyword">default</span></span>
+</code></pre><p><code>default</code>中需要写入如下内容：</p>
+<pre><code>default vesamenu.c32
+prompt <span class="number">0</span>
+timeout <span class="number">30</span>
+menu title <span class="constant">UBUNTU</span> <span class="constant">LIVE</span>
+label ^<span class="constant">Ubuntu</span> <span class="constant">Desktop</span>
+kernel vmlinuz
+append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot=<span class="number">192.168</span>.<span class="number">1.1</span><span class="symbol">:/mnt/sda3/nfsroot</span> initrd=initrd.lz locale=zh_CN.<span class="constant">UTF</span>-<span class="number">8</span>
+</code></pre><p>其中的<code>nfsroot=192.168.1.1:/mnt/sda3/nfsroot</code>这个参数是要根据实际情况而定的，前面的<code>192.168.1.1</code>是你的路由器的IP，而后面则是之前确定的nfs的目录。  </p>
+<p>到这里，所有的文件都已准备妥当了，剩下的就是配置tftp和nfs服务器了，tftp服务器的配置参考<a href="http://blog.nanpuyue.com/2012/012.html">http://blog.nanpuyue.com/2012/012.html</a>最后一步，前面的都不用做，只需要完成Web界面的设置即可：  </p>
+<p>TFTP服务器根目录    /mnt/sda3/tftproot<br>网络启动镜像        pxelinux.0  </p>
+<p><img src="https://lh6.googleusercontent.com/-oxhpW5KKgW4/UfAMeFEVW8I/AAAAAAAAAWk/ZZlI_lkIjyA/s0/tftp.png" alt="tftp设置">  </p>
+<p>然后是配置nfs：  </p>
+<pre><code>vi /etc/<span class="built_in">exports</span>
+</code></pre><p>先注释掉原来仅有的一行(在<code>/mnt   *(ro,all_squash,insecure,sync)</code>前面插入一个<code>#</code>)，然后添加一行：  </p>
+<pre><code>/mnt/sda3/nfsroot *(<span class="keyword">async</span>,no_root_squash,no_subtree_check,ro)
+</code></pre><p>最后启动nfs服务：  </p>
+<pre><code>/etc/init.d/portmap <span class="operator"><span class="keyword">start</span>
+/etc/init.d/nfsd <span class="keyword">start</span></span>
+</code></pre><p>如果需要nfs服务自启，则要执行：  </p>
+<pre><code>/etc/init<span class="preprocessor">.d</span>/portmap enable
+/etc/init<span class="preprocessor">.d</span>/nfsd enable
+</code></pre><p>你也可以在Web界面的“系统”-“启动项”下控制上面两个服务。  </p>
+<p>至此，整个搭建过程就完成了，剩下的，就是插上网线，重启电脑并选择从网络启动了。<br>然后你会看到下面的界面，这时按下回车或者等待3秒Ubuntu就会启动了，需要提醒的是，启动后与使用CD光盘启动无异，你对系统所做的更改都不会被保存。<br><img src="https://lh6.googleusercontent.com/-U1uPsRcLnKs/UfAMQSLUtGI/AAAAAAAAAVc/7MPKOyVbla4/s0/boot_menu.png" alt="启动菜单"></p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Linux/">Linux</a><a href="/categories/Linux/OpenWrt/">OpenWrt</a></div>
+
+      
+      
+    </footer>
+    
+  </div>
+  
+<section id="comment">
+  <div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+    <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>
+  
+  
+    <a class="google" href="https://plus.google.com/+nanpuyue" title="Google+">Google+</a>
+  
+  
+    <a class="twitter" href="https://twitter.com/nanpuyue" title="Twitter">Twitter</a>
+  
+  
+    <a class="github" href="https://github.com/nanpuyue" title="GitHub">GitHub</a>
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+<div align="left">
+  
+  &copy; 2012-2014 <a href="http://blog.nanpuyue.com"> 南浦月 </a>
+  
+</div>
+
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'nanpuyue';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
