@@ -91,6 +91,7 @@
   
 </article>
 
+
   <article class="post">
   
     <div class="gallery">
@@ -123,27 +124,11 @@
 </code></pre><p>下载Debian的网络启动相关文件，文件可以在Debian的ftp上找到:<br><a href="ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/</a><br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/</a>  </p>
 <p>上面分别是两个版本的启动文件，其子目录gtk下也是一套独立的启动文件，是有图形安装界面的。<br>下载要下载整个目录，不需要图形界面的gtk这个目录可以不要，要图形界面的可以只下载gtk这个目录。<br>最好是在Linux下使用wget进行递归下载，因为ftp中有些文件和目录是以链接的形式存在的，在Windows下下载可能造成链接丢失从而导致文件不全。<br>比如：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>或者：  </p>
-<pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> squeeze<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>如果下载很慢，可以换用国内镜像：  </p>
-<pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//mirrors.ustc.edu.cn/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>或者：  </p>
-<pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> squeeze<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//mirrors.ustc.edu.cn/debian/dists/squeeze/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>如果你要在OpenWrt上直接下载，需要安装wget以替代busybox内建的wget：  </p>
-<pre><code>opkg <span class="operator"><span class="keyword">update</span>
-opkg install wget</span>
-</code></pre><p>这里是上面的命令所下载的文件打包：<br><a href="http://s.yunio.com/Y_7Zhu" target="_blank">wheezy-netboot-gtk_i386.tar.gz</a><br><a href="http://s.yunio.com/Lpmiqy" target="_blank">squeeze-netboot-gtk_i386.tar.gz</a>  </p>
-<p>将所下载的文件放置到/mnt/sda1/pxe下，其目录下有类似以下一些文件和文件夹：  </p>
-<p><img src="//img.nanpuyue.com/upload/2012/10/27/20121027153306-a819054e.png" alt="文件">  </p>
-<p>如果你选择下载我提供的打包文件，可以将wheezy-netboot-gtk_i386.tar.gz上传到路由器/mnt/sda1/pxe，然后解压：  </p>
-<pre><code>cd /mnt/sda1/pxe
-tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk_i386</span><span class="built_in">.</span>tar<span class="built_in">.</span>gz
-</code></pre><p>然后wheezy-netboot-gtk_i386.tar.gz可以删除：  </p>
-<pre><code>rm wheezy-netboot-gtk_i386<span class="preprocessor">.tar</span><span class="preprocessor">.gz</span>
-</code></pre><p>进入OpenWrt的WEB设置界面，在“网络”-“DNS/DHCP”设置(即Dnsmasq设置)下，选择“TFTP设置”，做如下设置：<br>TFTP服务器根目录    /mnt/sda1/pxe/<br>网络启动镜像        pxelinux.0  </p>
-<p><img src="//img.nanpuyue.com/upload/2012/10/27/20121027153310-9ba8094a.png" alt="设置">  </p>
-<p>然后点击下方的“保存&amp;应用”。<br>这样，整个搭建过程就完成了，剩下的，只需要将电脑或者服务器接到路由器LAN口，并选择从网络启动即可。</p>
-
+</code></pre><p>
+      <div class="alignright">
+        <a href="/2012/012.html" class="more-link">阅读全文</a>
+      </div>
+      <div class="clearfix"></div>
     
     
     <footer class="meta">
@@ -161,6 +146,7 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
   </div>
   
 </article>
+
 
   <article class="post">
   
@@ -189,52 +175,11 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
   <div class="entry-content">
     
       <h3 id="固件信息">固件信息</h3>
-<p>系统名称    OpenWrt<br>路由型号    TP-Link TL-WR720N v3<br>固件版本    OpenWrt Barrier Breaker r35420 / LuCI Trunk (trunk+svn9664)<br>内核版本    3.7.5<br>编译时间    2013年2月2日<br>编译者    <a href="http://blog.nanpuyue.com">南浦月</a><br><img src="https://lh3.googleusercontent.com/-mwcUuTpAz1g/UfAMQFsKpcI/AAAAAAAAAVY/RdC975YXX2I/s0/TL-WR720N.png" alt="TL-WR720N">  </p>
-<h3 id="固件特性">固件特性</h3>
-<p>调整：  </p>
-<ul>
-<li>默认中文</li>
-<li>默认UTC+8时区</li>
-<li>默认Bootstrap主题</li>
-<li>默认无线开启</li>
-</ul>
-<p>修正：  </p>
-<ul>
-<li>修正实时信息界面的错别字(“链接”应作“连接”)</li>
-</ul>
-<p>其他：  </p>
-<ul>
-<li>默认使用自建软件源，解决安装内核模块时版本不一致的问题(配置文件在/etc/opkg.conf)</li>
-</ul>
-<p><img src="https://lh3.googleusercontent.com/-CrEEIm1cJiE/UfAMZ2WHnlI/AAAAAAAAAV8/HaejMt3Cmdo/s0/opkg_conf.png" alt="opkg配置"></p>
-<h3 id="下载地址">下载地址</h3>
-<p>提供两个定制版本下载，一个usb扩展版，一个mini最小化版，原厂固件刷“factory”，已经是OpenWrt的刷“sysupgrade”。<br>usb版：<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/usb/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-sysupgrade.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/usb/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-sysupgrade.bin</a><br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/usb/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/usb/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin</a><br>md5校验值：  </p>
-<pre><code>a85c09fd6ee80661a7170c2cab145b3a    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-squashfs</span><span class="attribute">-factory</span><span class="built_in">.</span>bin
-<span class="number">7979</span>c3ddaaea325b707f8d8e55ebb5ff    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-squashfs</span><span class="attribute">-sysupgrade</span><span class="built_in">.</span>bin
-</code></pre><p><strong>刷机前请仔细核对。</strong><br>mini版：<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-jffs2-factory.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-jffs2-factory.bin</a><br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-jffs2-sysupgrade.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-jffs2-sysupgrade.bin</a><br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin</a><br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-sysupgrade.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/mini/openwrt-ar71xx-generic-tl-wr720n-v3-squashfs-sysupgrade.bin</a><br>md5校验值：  </p>
-<pre><code><span class="number">9</span>dfdb11af85642d3d5b911a45db61a9d    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-jffs2</span><span class="attribute">-factory</span><span class="built_in">.</span>bin
-<span class="number">453122</span>a31c987e9a9627de6cffae86f0    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-jffs2</span><span class="attribute">-sysupgrade</span><span class="built_in">.</span>bin
-<span class="number">2e57317</span>dd55514b131fa2307ce2341ed    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-squashfs</span><span class="attribute">-factory</span><span class="built_in">.</span>bin
-<span class="number">9648</span>d237485802f27b35b460fcd817f4    openwrt<span class="attribute">-ar71xx</span><span class="attribute">-generic</span><span class="attribute">-tl</span><span class="attribute">-wr720n</span><span class="attribute">-v3</span><span class="attribute">-squashfs</span><span class="attribute">-sysupgrade</span><span class="built_in">.</span>bin
-</code></pre><p><strong>刷机前请仔细核对!</strong><br>Image Builder：<br><a href="http://s.yunio.com/mMriUr" target="_blank">http://s.yunio.com/mMriUr</a>(云诺)<br>文件名：openwrt_image_builder_ar71xx_x64_2013-2-4.tar.gz  </p>
-<p>md5校验值：c1562373db6a340f84f566cd26b29a33</p>
-<h3 id="云诺注册邀请">云诺注册邀请</h3>
-<p><a href="https://www.yunio.com/index/url/code/UWcvTGJ3VkVraTdLRWlhaENJai9Wc1dpKzNxclFFRW05ZktiZ3VtaXpvZ1N0Ylpqa3FuR3RvQQ==" target="_blank">https://www.yunio.com/index/url/code/UWcvTGJ3VkVraTdLRWlhaENJai9Wc1dpKzNxclFFRW05ZktiZ3VtaXpvZ1N0Ylpqa3FuR3RvQQ==</a></p>
-<h3 id="USB版固件设置U盘扩展">USB版固件设置U盘扩展</h3>
-<p>首先，我并不推荐exroot，这里介绍的方法是将U盘挂载到<code>/overlay</code>的方法。<br>先将U盘分区，这里提供的固件并没有集成分区工具，所以不能完成分区，当然你也可以不分区，这样整个U盘就是一个分区。<br>然后格式化要挂载的分区格式化为ext4，可以在Linux系统的电脑上完成，也可以在路由器上完成。假设这个分区是<code>/dev/sda1</code>(如果没有分区，它可能是<code>/dev/sda</code>)，则使用下面的命令完成格式化：  </p>
-<pre><code>mkfs<span class="preprocessor">.ext</span>4 /dev/sda1
-</code></pre><p>然后就可以将其挂载点设置为/overlay了:<br><img src="https://lh4.googleusercontent.com/-RQlNXiIWYF4/UfAMhQui8VI/AAAAAAAAAXI/nyvgoOdsh9o/s0/挂载到overlay.png" alt="挂载到overlay"><br>设置好后点“保存&amp;应用”并重启即可，如果不想重启后其他设置恢复初始值，可以在重启前备份设置，并在重启后以恢复备份文件即可。<br>另外要注意的是，如果U盘没有被挂载到<code>/overlay</code>，而是<code>/tmp/overlay-disabled</code>,请删除<code>/tmp/overlay-disabled/etc/extroot.md5sum</code>后重启。  </p>
-<h3 id="设置40MHz频宽">设置40MHz频宽</h3>
-<p>默认的无线是20MHz的频宽，我没有更改默认设置，但是这样无线速率最高只有150M的一半，如果想要150M的无线速率，要将频宽设置为40MHz：<br><img src="https://lh5.googleusercontent.com/-nk7rFP10wIg/UfAMWIE4l1I/AAAAAAAAAVs/Jzlh3weh8W4/s0/openwrt_40MHz.png" alt="OpenWrt-40MHz"><br>“HT模式”选“40MHz HT40-”和“40MHz HT40+”均可，下面的“强制40MHz频宽”不是必须的，但是不勾选的话可能造成客户端仍以20MHz频宽连接。  </p>
-<h3 id="Image_Builder使用方法">Image Builder使用方法</h3>
-<p>由于我是在64位系统上编译的，所以这个Image Builder也是64位的，使用时解压，终端进入解压所得文件夹。<br>显示帮助信息：  </p>
-<pre><code>make <span class="built_in">help</span>
-</code></pre><p>上面提供下载的固件分别是用下面的命令生成的：<br>usb版  </p>
-<pre><code>make image PROFILE=<span class="string">"TLWR720"</span> PACKAGES=<span class="string">"luci luci-theme-bootstrap luci-i18n-chinese kmod-usb-storage kmod-usb-storage-extras kmod-usb2 kmod-fs-ext4 kmod-fs-ntfs kmod-fs-vfat e2fsprogs block-mount"</span> FILES=<span class="built_in">files</span>/
-</code></pre><p>mini版  </p>
-<pre><code>make image PROFILE=<span class="string">"TLWR720"</span> PACKAGES=<span class="string">"luci luci-theme-bootstrap luci-i18n-chinese -kmod-usb2 -kmod-usb-core"</span> FILES=<span class="built_in">files</span>/
-</code></pre><p><code>PROFILE=</code>后跟的参数是要生成固件的路由器型号，使用<code>make info</code>可以查看可用型号列表，<code>PACKAGES=</code>后的参数是在默认软件包的基础上要添加或删除的软件包，软件包名前加减号表示删除，<code>FILES=</code>后则是要在固件中额外添加的文件。</p>
-
+<p>系统名称    OpenWrt<br>路由型号    TP-Link TL-WR720N v3<br>固件版本    OpenWrt Barrier Breaker r35420 / LuCI Trunk (trunk+svn9664)<br>内核版本    3.7.5<br>编译时间    2013年2月2日<br>编译者    <a href="http://blog.nanpuyue.com">南浦月</a><br><img src="https://lh3.googleusercontent.com/-mwcUuTpAz1g/UfAMQFsKpcI/AAAAAAAAAVY/RdC975YXX2I/s0/TL-WR720N.png" alt="TL-WR720N">
+      <div class="alignright">
+        <a href="/2012/011.html" class="more-link">阅读全文</a>
+      </div>
+      <div class="clearfix"></div>
     
     
     <footer class="meta">
@@ -252,6 +197,7 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
   </div>
   
 </article>
+
 
   <article class="post">
   
@@ -302,6 +248,7 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
   
 </article>
 
+
   <article class="post">
   
     <div class="gallery">
@@ -332,38 +279,11 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
 <h2 id="Windows">Windows</h2>
 <p>使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。<br>但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:<br>单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  </p>
 <pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>
-</code></pre><p>我们添加后变成：  </p>
-<pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>;C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin
-</code></pre><p>这样以后要使用挂载的命令就不必进入安装目录，而是可以直接使用。<br>要挂载一个虚拟磁盘：  </p>
-<pre><code>vmware-mount <span class="constant">Z</span><span class="symbol">:</span> <span class="constant">D</span><span class="symbol">:ubuntu</span>.vmdk /<span class="symbol">v:</span><span class="number">1</span>
-</code></pre><p>注意路径中有空格的要用引号把路径括起来，这样ubuntu.vmdk中的第一个卷就会被挂载到Z:，/v:1可以省略，默认为1，如果要挂载虚拟磁盘中的第二个卷就必须加上/v:2。<br>卸载：  </p>
-<pre><code>vmware<span class="attribute">-mount</span> Z: /d
-</code></pre><p>列出当前挂载的虚拟磁盘：  </p>
-<pre><code>vmware<span class="attribute">-mount</span> /L
-</code></pre><p>或者  </p>
-<pre><code>vmware<span class="attribute">-mount</span>
-</code></pre><p>其余命令就不介绍了，使用vmware-mount /?查看帮助。  </p>
-<h2 id="Linux">Linux</h2>
-<p>先将下载所得VMware-vix-disklib-*.tar.gz解压，比如解压到桌面，然后打开终端，进入解压所得的目录，安装：  </p>
-<pre><code><span class="built_in">sudo</span> ./vmware-install.pl
-</code></pre><p>期间需要按很多次回车，建议先一直按住回车键，直到询问 yes 或 no 时，输入 y ,回车，然后会询问安装位置，默认是/usr，直接回车使用默认值，安装即完成。<br>在Linux下，可能会出现VixDiskLib: Failed to load libvixDiskLibVim.so: Error = …的错误，解决方法如下：  </p>
-<pre><code><span class="built_in">sudo</span> sh -c <span class="string">"echo /usr/lib/vmware-vix-disklib/lib64&gt;/etc/ld.so.conf.d/x86_x64-vmware-vix-disklib.conf"</span>
-<span class="built_in">sudo</span> sh -c <span class="string">"echo /usr/lib/vmware-vix-disklib/lib32&gt;/etc/ld.so.conf.d/i386-vmware-vix-disklib.conf"</span>
-<span class="built_in">sudo</span> ldconfig
-</code></pre><p>具体需要视你的系统而定，32位系统就不用建立x86_x64-vmware-vix-disklib.conf，64位系统也可以不建立i386-vmware-vix-disklib.conf，但是ldconfig是一定要执行的。<br>另外提醒下，”x86_x64-vmware-vix-disklib.conf”这个文件名前面的”x86_x64-“前缀是一定要有的，不要去掉，否则会有各种问题产生。<br>挂载：  </p>
-<pre><code><span class="built_in">sudo</span> vmware-mount ~/Virtualbox/windows.vhd <span class="number">1</span> ~/windows
-</code></pre><p>其中1是要挂载的卷，~/windows是挂载点，挂载点其实就是文件夹，一定要事先建好，~表示用户目录，比如我的用户名是nanpuyue，那么~/windows也可以写成/home/nanpuyue/windows，路径中有空格的要用引号把路径括起来。<br>卸载：  </p>
-<pre><code><span class="built_in">sudo</span> vmware-mount <span class="operator">-d</span> ~/windows
-</code></pre><p>另外，在Linux中要卸载Virtual Disk Development Kit，使用命令下面的命令：  </p>
-<pre><code>sudo vmware<span class="attribute">-uninstall</span><span class="attribute">-vix</span><span class="attribute">-disklib</span><span class="built_in">.</span>pl
-</code></pre><p>或者：  </p>
-<pre><code>sudo /usr/bin/vmware<span class="attribute">-uninstall</span><span class="attribute">-vix</span><span class="attribute">-disklib</span><span class="built_in">.</span>pl
-</code></pre><p>查看帮助：  </p>
-<pre><code>vmware<span class="attribute">-mount</span>
-</code></pre><p>或者  </p>
-<pre><code><span class="comment">vmware</span><span class="literal">-</span><span class="comment">mount</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">help</span>
-</code></pre><p>更新历史：<br>2013-1-3:添加vSphere 5.0.2 Virtual Disk Development Kit下载地址，其他修正。</p>
-
+</code></pre><p>
+      <div class="alignright">
+        <a href="/2012/006.html" class="more-link">阅读全文</a>
+      </div>
+      <div class="clearfix"></div>
     
     
     <footer class="meta">
@@ -381,6 +301,7 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
   </div>
   
 </article>
+
 
 
 <nav id="pagenavi">

@@ -11,7 +11,12 @@
 本版wineqq基于QQ2012 Beta3(4786)，已在Ubuntu 12.04&amp;12.10下测试通过，同时支持32位和64位操作系统。  
 下载地址：
 deb包
-2013年2月13日：w">
+2013年2月13日：wine-qq2012-nanpuyue_2013-2-13.debhttp://s.yunio.com/FMRdMx(云诺)md5sum：78a08830579a5dd8023092e94c87bf8f更新内容：  
+
+不再集成QQ安装包及微软的dll,所需文件均改由互联网获取
+历史版本不再提供下载
+
+deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用">
   
   
 
@@ -85,8 +90,8 @@ deb包
 <li>不再集成QQ安装包及微软的dll,所需文件均改由互联网获取</li>
 <li>历史版本不再提供下载</li>
 </ul>
-<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong>  </p>
-<h2 id="deb包安装：">deb包安装：</h2>
+<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong><br><a id="more"></a></p>
+<h2 id="deb包安装">deb包安装</h2>
 <p>64位系统差一个共享厍文件并且还需要安装ia32-libs：  </p>
 <pre><code>sudo wget <span class="attribute">-P</span> <span class="string">'/usr/lib/i386-linux-gnu/pkcs11'</span> <span class="string">'http://files.nanpuyue.com/ubuntu/wineqq/so/gnome-keyring-pkcs11.so'</span>
 sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">-libs</span>
@@ -127,7 +132,8 @@ sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

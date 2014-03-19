@@ -7,7 +7,7 @@
   <meta name="author" content="南浦月">
 
   
-  <meta name="description" content="Linux Deepin是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem">
+  <meta name="description" content="Linux Deepin是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。">
   
   
 
@@ -72,12 +72,14 @@
   </header>
   <div class="entry-content">
     
-      <p><a href="http://www.linuxdeepin.com" target="_blank">Linux Deepin</a>是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。<br>这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。<br><img src="https://lh5.googleusercontent.com/-g6c4KqOos0M/UfCQSQoTwQI/AAAAAAAAAdY/51XA3kAPrRI/s0/深度影音.png" alt="深度影音"><br>总之，这些优点要你自己用了才知道了，所以下面就直接进入正题了。<br>要在Ubuntu上安装深度影音&amp;深度音乐，可以通过安装深度软件中心并添加深度的软件源来实现，但是并不推荐。这里讲手动下载安装，也很简单，但是相比之下更可控，更稳定，不会对系统造成其他不可预测的影响。<br>深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player)均依赖于deepin-ui、python-deepin-utils，deepin-gsettings，而deepin这个包Ubuntu的软件源中是没有的，所以我们要手动下载4个包：python-deepin-utils、deepin-ui、deepin-media-player、deepin-music-player。</p>
+      <p><a href="http://www.linuxdeepin.com" target="_blank">Linux Deepin</a>是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。<br>这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。<br><img src="https://lh5.googleusercontent.com/-g6c4KqOos0M/UfCQSQoTwQI/AAAAAAAAAdY/51XA3kAPrRI/s0/深度影音.png" alt="深度影音"><a id="more"></a><br>总之，这些优点要你自己用了才知道了，所以下面就直接进入正题了。<br>要在Ubuntu上安装深度影音&amp;深度音乐，可以通过安装深度软件中心并添加深度的软件源来实现，但是并不推荐。这里讲手动下载安装，也很简单，但是相比之下更可控，更稳定，不会对系统造成其他不可预测的影响。<br>深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player)均依赖于deepin-ui、python-deepin-utils，deepin-gsettings，而deepin这个包Ubuntu的软件源中是没有的，所以我们要手动下载4个包：python-deepin-utils、deepin-ui、deepin-media-player、deepin-music-player。</p>
 <ul>
 <li>python-deepin-utils：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-utils/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-utils/</a></li>
 <li>deepin-ui：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-ui/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-ui/</a>  </li>
-<li>deepin-gsettings：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/</a><br>(选择对应的最新版本，32位系统下载带i386的，64位系统下载带amd64的)</li>
-<li>deepin-media-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/</a></li>
+<li><p>deepin-gsettings：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/</a><br>(选择对应的最新版本，32位系统下载带i386的，64位系统下载带amd64的)</p>
+</li>
+<li><p>deepin-media-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/</a></p>
+</li>
 <li>deepin-music-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-music-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-music-player/</a><br>(选择最新的即可，不区分32位和64位) </li>
 </ul>
 <p>然后安装下载的deb包，可以双击安装，但是一定要先安装deepin-ui；也可以使用dpkg安装，可以将三个deb包放到一个文件夹，然后在终端中进入该文件夹，运行如下命令：  </p>
@@ -109,7 +111,8 @@
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

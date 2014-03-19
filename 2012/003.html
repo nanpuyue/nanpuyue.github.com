@@ -14,7 +14,10 @@ H3C 802.1x认证
 多用户管理
 mac绑定设置及自动修改mac
 
-项目主页：Github：https://github.com/nanpuyue/oh3cGoogle C">
+项目主页：Github：https://github.com/nanpuyue/oh3cGoogle Code：https://code.google.com/p/oh3c  
+下载：https://code.google.com/p/oh3c/downloads/list  
+前提
+首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用Putty。">
   
   
 
@@ -89,7 +92,7 @@ mac绑定设置及自动修改mac
 <p>项目主页：<br>Github：<a href="https://github.com/nanpuyue/oh3c" target="_blank">https://github.com/nanpuyue/oh3c</a><br>Google Code：<a href="https://code.google.com/p/oh3c" target="_blank">https://code.google.com/p/oh3c</a>  </p>
 <p>下载：<br><a href="https://code.google.com/p/oh3c/downloads/list" target="_blank">https://code.google.com/p/oh3c/downloads/list</a>  </p>
 <h2 id="前提">前提</h2>
-<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。<br><img src="https://lh3.googleusercontent.com/-bUwNCZtKOSs/UfARRB4yVYI/AAAAAAAAAZg/Wfff7Y1E4Wc/s0/telnet.png" alt="Putty telnet"><br><img src="https://lh4.googleusercontent.com/-1IZ5YCfdNM8/UfARMcr-xjI/AAAAAAAAAZI/N8xBvutIZdQ/s0/ssh.png" alt="Putty ssh"><br>你还可以在Saved Sessions下面填上一个名称，然后点击保存，以后直接在下面点击这个名称，再点Load、Open就可以登录了。 需要注意的是登录ssh是需要输入你设置的密码，但是密码不会显示，对，连星号都不会显示，只管输入就是了。<br><img src="https://lh6.googleusercontent.com/-MpB2v7dgSIE/UfARN8ruTWI/AAAAAAAAAZY/NVNwBWN8qpI/s0/ssh_login.png" alt="ssh login"></p>
+<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。<a id="more"></a><br><img src="https://lh3.googleusercontent.com/-bUwNCZtKOSs/UfARRB4yVYI/AAAAAAAAAZg/Wfff7Y1E4Wc/s0/telnet.png" alt="Putty telnet"><br><img src="https://lh4.googleusercontent.com/-1IZ5YCfdNM8/UfARMcr-xjI/AAAAAAAAAZI/N8xBvutIZdQ/s0/ssh.png" alt="Putty ssh"><br>你还可以在Saved Sessions下面填上一个名称，然后点击保存，以后直接在下面点击这个名称，再点Load、Open就可以登录了。 需要注意的是登录ssh是需要输入你设置的密码，但是密码不会显示，对，连星号都不会显示，只管输入就是了。<br><img src="https://lh6.googleusercontent.com/-MpB2v7dgSIE/UfARN8ruTWI/AAAAAAAAAZY/NVNwBWN8qpI/s0/ssh_login.png" alt="ssh login"></p>
 <h2 id="依赖">依赖</h2>
 <ul>
 <li>python-mini</li>
@@ -212,7 +215,8 @@ opkg install luci<span class="attribute">-theme</span><span class="attribute">-b
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

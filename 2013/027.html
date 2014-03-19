@@ -13,7 +13,16 @@
 一个刷好OpenWrt的带USB接口和有线网络接口的无线路由器(TP-LINK TL-WR720N V3)
 一个U盘(PNY 8G)
 一根双绞交叉网线
-一台支持网">
+一台支持网络启动的电脑(Acer 4738G)
+
+本方案使用的系统为Ubuntu，对版本没有特别的要求，但早期的版本不保证一定能成功，所以首先要准备Ubuntu的Live CD的iso镜像，我使用的是ubuntu-12.04.1-desktop-amd64.iso，如果你的电脑的内存不是很大(我的6G)建议使用32位的镜像。  
+下面正式进入实际操作，第一步是挂载U盘，这个可以灵活一些，我的情况是路由器只有4M Flash空间，不足以安装我所需的所有软件包，所以我将U盘分为三个分区：  
+
+/dev/sda1    ext4    512M
+/dev/sda2    swap    16M
+/dev/sda3    ntfs    6.89G
+
+其中sda1挂载到/overlay，sda2是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到/mnt/sda3，关于挂载U盘分区到/overlay的细节，可以参考http://blog.nanpuyue.com/2012/011.html的后半部分。">
   
   
 
@@ -93,7 +102,7 @@
 <li>/dev/sda2    swap    16M</li>
 <li>/dev/sda3    ntfs    6.89G</li>
 </ul>
-<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。  </p>
+<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。<a id="more"></a>  </p>
 <p>如果你的路由器剩余空间足够大到可以安装下面的软件包，你可以不用挂载U盘分区到<code>/overlay</code>。总之，在确保路由器有足够空间安装所需软件包后安装<code>nfs-kernel-server-utils</code>即可。<br>    opkg update<br>    opkg install nfs-kernel-server-utils<br>这样，路由器会自动安装<code>nfs-kernel-server-utils</code>及其依赖，当然，在安装是有可能出现内核模块(kmod-*)不能安装的问题，这不在本文的讨论范围。  </p>
 <p>安装好所需软件包后，就是文件的就位和各种配置了。首先你要确定文件存放位置，这里涉及到两个文件夹，一个是网络启动相关的，一个是nfs相关的，前者用于存放网络启动引导文件，后者用于存放Ubuntu的spuashfs文件系统。当然，它们可以是同一个文件夹，但是我并不推荐那样做。  </p>
 <p>最后，我的两个文件夹分别是<code>/mnt/sda3/tftproot</code>和<code>/mnt/sda3/nfsroot</code>。  </p>
@@ -155,7 +164,8 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

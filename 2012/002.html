@@ -13,7 +13,16 @@ sudo apt-get install subversion
 sudo apt-get install git
 sudo apt-get install flex
 sudo apt-get install g++
-sudo apt-ge">
+sudo apt-get install gawk
+sudo apt-get install zlib1g-dev
+sudo apt-get install libncurses5-dev
+当然，也可以将上面的命令合起来：  
+sudo apt-get install subversion git flex g++ gawk zlib1g-dev libncurses5-dev
+建立工作目录及获取openwrt源码
+mkdir openwrt
+cd openwrt
+svn co svn://svn.openwrt.org/openwrt/trunk/
+trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。">
   
   
 
@@ -93,7 +102,7 @@ sudo apt<span class="attribute">-get</span> install libncurses5<span class="attr
 <pre><code>mkdir openwrt
 cd openwrt
 svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
-</code></pre><p>trunk是openwrt的开发版，openwrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的openwrt中文论坛所建的镜像。</p>
+</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br><a id="more"></a></p>
 <h3 id="更新feed及添加package">更新feed及添加package</h3>
 <p>openwrt的一些额外功能都是通过package实现的，很多个package就组成了一个feed，我们可以根据需求更新自己想要的feed的源。 例如我们需要luci的web管理界面和python的支持，那么我们需要更新luci和packages的feed源：  </p>
 <pre><code><span class="built_in">cd</span> trunk
@@ -140,7 +149,8 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

@@ -10,7 +10,9 @@
   <meta name="description" content="前提：拥有一个带USB接口的并且已刷OpenWrt的路由器，路由器可以联网。  
 将U盘挂载到路由器上，这个不在本文讨论范围之类，故假设U盘已经挂在到/mnt/sda1。通过SSH登录路由器，在/mnt/sda1下新建一个文件夹名曰pxe：  
 mkdir -p /mnt/sda1/pxe
-下载De">
+下载Debian的网络启动相关文件，文件可以在Debian的ftp上找到:ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/  
+上面分别是两个版本的启动文件，其子目录gtk下也是一套独立的启动文件，是有图形安装界面的。下载要下载整个目录，不需要图形界面的gtk这个目录可以不要，要图形界面的可以只下载gtk这个目录。最好是在Linux下使用wget进行递归下载，因为ftp中有些文件和目录是以链接的形式存在的，在Windows下下载可能造成链接丢失从而导致文件不全。比如：  
+wget --cut-dirs=9 -nH -P wheezy-netboot-gtk -r ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/">
   
   
 
@@ -81,7 +83,7 @@ mkdir -p /mnt/sda1/pxe
 </code></pre><p>下载Debian的网络启动相关文件，文件可以在Debian的ftp上找到:<br><a href="ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/</a><br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/</a>  </p>
 <p>上面分别是两个版本的启动文件，其子目录gtk下也是一套独立的启动文件，是有图形安装界面的。<br>下载要下载整个目录，不需要图形界面的gtk这个目录可以不要，要图形界面的可以只下载gtk这个目录。<br>最好是在Linux下使用wget进行递归下载，因为ftp中有些文件和目录是以链接的形式存在的，在Windows下下载可能造成链接丢失从而导致文件不全。<br>比如：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>或者：  </p>
+</code></pre><p><a id="more"></a>或者：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> squeeze<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/gtk/</span>
 </code></pre><p>如果下载很慢，可以换用国内镜像：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//mirrors.ustc.edu.cn/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
@@ -124,7 +126,8 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

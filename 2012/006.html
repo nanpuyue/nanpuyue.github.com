@@ -7,7 +7,10 @@
   <meta name="author" content="南浦月">
 
   
-  <meta name="description" content="如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。官方下载页面：vSphere 5.0.1 Virtual Disk Development KitvSphere 5.0.2 Virtual Disk Developme">
+  <meta name="description" content="如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。官方下载页面：vSphere 5.0.1 Virtual Disk Development KitvSphere 5.0.2 Virtual Disk Development Kit要在官方下载，需要注册并登录，读者请自行完成。下载后首先安装，Windows下安装很简单，Linux下的安装下面会讲，以Ubuntu 12.04为例。Windows下和Linux下的用法大同小异，我只举出几个例子。  
+Windows
+使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShellv1.0">
   
   
 
@@ -76,7 +79,7 @@
 <h2 id="Windows">Windows</h2>
 <p>使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。<br>但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:<br>单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  </p>
 <pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>
-</code></pre><p>我们添加后变成：  </p>
+</code></pre><p><a id="more"></a>我们添加后变成：  </p>
 <pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>;C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin
 </code></pre><p>这样以后要使用挂载的命令就不必进入安装目录，而是可以直接使用。<br>要挂载一个虚拟磁盘：  </p>
 <pre><code>vmware-mount <span class="constant">Z</span><span class="symbol">:</span> <span class="constant">D</span><span class="symbol">:ubuntu</span>.vmdk /<span class="symbol">v:</span><span class="number">1</span>
@@ -130,7 +133,8 @@
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

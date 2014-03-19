@@ -10,7 +10,15 @@
   <meta name="description" content="本文要介绍的是如何在OpenWrt平台上面搭建无盘工作站服务器以及Windows的iSCSI部署。当然，由于OpenWrt也可以算得上一种Linux发行版了，所以本文所介绍的一些方法，在其它Linux发行版上面仍有一定的参考价值。  
 整个过程大概分为以下几步：  
 
-给OpenWrt添加iSCSI">
+给OpenWrt添加iSCSI Target支持
+创建并配置iSCSI Target
+获取gPXE并配置DHCP及TFTP服务
+通过iSCSI部署Windows
+测试
+
+给OpenWrt添加iSCSI Target支持
+到写作本文为止，貌似OpenWrt官方还没有添加iSCSI Target支持相关的软件包，所以我们需要自力更生。然而幸运的是，已经有前人做过了类似的事情，我们只要采取“拿来主义”即可。  
+相关资源：https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scsthttps://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。">
   
   
 
@@ -86,7 +94,7 @@
 </ul>
 <h3 id="给OpenWrt添加iSCSI_Target支持">给OpenWrt添加iSCSI Target支持</h3>
 <p>到写作本文为止，貌似OpenWrt官方还没有添加iSCSI Target支持相关的软件包，所以我们需要自力更生。然而幸运的是，已经有前人做过了类似的事情，我们只要采取“拿来主义”即可。  </p>
-<p>相关资源：<br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst</a><br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst</a><br>上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。  </p>
+<p>相关资源：<br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst</a><br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst</a><br>上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。<a id="more"></a>  </p>
 <p>另外还有一个在用户空间实现的方案，详情见：<br><a href="https://dev.openwrt.org/ticket/8798" target="_blank">https://dev.openwrt.org/ticket/8798</a><br><a href="http://patchwork.openwrt.org/patch/2597" target="_blank">http://patchwork.openwrt.org/patch/2597</a>  </p>
 <p>无论上面哪种方案，就目前而言都需要读者自行编译，但是如何交叉编译OpenWrt所需的软件包不在本文的讨论范围。  </p>
 <p>采用第一种方案，进行交叉编译后，会得到以下几个软件包：  </p>
@@ -150,7 +158,8 @@ config device
   </div>
 </section>
 
-</article></div>
+</article>
+</div>
   <footer id="footer" class="inner"><div class="social alignright">
   
     <a class="facebook" href="https://www.facebook.com/nanpuyue" title="Facebook">Facebook</a>

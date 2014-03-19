@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.nanpuyue.com/"/>
-  <updated>2014-03-16T07:19:33.509Z</updated>
+  <updated>2014-03-19T19:04:30.655Z</updated>
   <id>http://blog.nanpuyue.com/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="http://blog.nanpuyue.com/2013/029.html"/>
     <id>http://blog.nanpuyue.com/2013/029.html</id>
     <published>2013-03-14T09:41:00.000Z</published>
-    <updated>2013-07-25T02:10:53.000Z</updated>
+    <updated>2014-03-19T19:03:18.000Z</updated>
     <content type="html"><![CDATA[<h2 id="GeoGebra是什么">GeoGebra是什么</h2>
 <p>如果你还没有听说过GeoGebra，那么可以看看<a href="https://zh.wikipedia.org/wiki/GeoGebra" target="_blank">维基百科上的介绍</a>：  </p>
 <blockquote>
 <p>GeoGebra 是一个在GPL协议下发布的动态几何软件。 该项目于2001年由Markus Hohenwarter在萨尔茨堡大学创建，现在在佛罗里达州立大学进行维护。GeoGebra由Java写成，因此可以跨平台使用。</p>
 <p>GeoGebra是一款动态几何软件。其绘图的基本元素包括点，直线，线段，多边形，向量，圆锥曲线和函数。（3.2及以后的版本还加入了电子表格和正在不断完善的数据处理功能）这些绘图元素均可在创建后直接在屏幕或者使用命令动态改变。 GeoGebra可以完成大量初高等数学中的绘图工作。比如GeoGebra可以直接绘制圆锥曲线，对函数求导数，积分，对多项式函数求极值和拐点等，这些极大的方便了教师们制作教学材料。</p>
 </blockquote>
-<p>如果你还是不太清楚，那么我可以告诉你它和几何画板是同一类软件，但是功能强大，可以说让几何画板难望其项背，除此之外GeoGebra还具有以下优势：  </p>
+<p>如果你还是不太清楚，那么我可以告诉你它和几何画板是同一类软件，但是功能强大，可以说让几何画板难望其项背，除此之外GeoGebra还具有以下优势：<a id="more"></a>  </p>
 <ul>
 <li>开源软件，完全免费</li>
 <li>横跨Linux、Windows、Mac三大平台</li>
@@ -55,7 +55,13 @@
 <p>GeoGebra软件源使用说明：<a href="http://software.opensuse.org/download.html?project=home:heimdall78&amp;package=geogebra" target="_blank">http://software.opensuse.org/download.html?project=home:heimdall78&amp;package=geogebra</a><br>你也可以使用我提供的镜像：<a href="http://mirrors.nanpuyue.com/geogebra/help/" target="_blank">http://mirrors.nanpuyue.com/geogebra/help/</a>  </p>
 <p>未完待续…</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<h2 id="GeoGebra是什么">GeoGebra是什么</h2>
+<p>如果你还没有听说过GeoGebra，那么可以看看<a href="https://zh.wikipedia.org/wiki/GeoGebra" target="_blank">维基百科上的介绍</a>：  </p>
+<blockquote>
+<p>GeoGebra 是一个在GPL协议下发布的动态几何软件。 该项目于2001年由Markus Hohenwarter在萨尔茨堡大学创建，现在在佛罗里达州立大学进行维护。GeoGebra由Java写成，因此可以跨平台使用。</p>
+<p>GeoGebra是一款动态几何软件。其绘图的基本元素包括点，直线，线段，多边形，向量，圆锥曲线和函数。（3.2及以后的版本还加入了电子表格和正在不断完善的数据处理功能）这些绘图元素均可在创建后直接在屏幕或者使用命令动态改变。 GeoGebra可以完成大量初高等数学中的绘图工作。比如GeoGebra可以直接绘制圆锥曲线，对函数求导数，积分，对多项式函数求极值和拐点等，这些极大的方便了教师们制作教学材料。</p>
+</blockquote>
+<p>如果你还是不太清楚，那么我可以告诉你它和几何画板是同一类软件，但是功能强大，可以说让几何画板难望其项背，除此之外GeoGebra还具有以下优势：]]></summary>
     
       <category term="开源" scheme="http://blog.nanpuyue.com/tags/%E5%BC%80%E6%BA%90/"/>
     
@@ -74,7 +80,7 @@
     <link href="http://blog.nanpuyue.com/2013/028.html"/>
     <id>http://blog.nanpuyue.com/2013/028.html</id>
     <published>2013-02-22T05:29:00.000Z</published>
-    <updated>2013-03-23T07:01:05.000Z</updated>
+    <updated>2014-03-19T19:01:32.000Z</updated>
     <content type="html"><![CDATA[<p>本文要介绍的是如何在OpenWrt平台上面搭建无盘工作站服务器以及Windows的iSCSI部署。<br>当然，由于OpenWrt也可以算得上一种Linux发行版了，所以本文所介绍的一些方法，在其它Linux发行版上面仍有一定的参考价值。  </p>
 <p>整个过程大概分为以下几步：  </p>
 <ul>
@@ -86,7 +92,7 @@
 </ul>
 <h3 id="给OpenWrt添加iSCSI_Target支持">给OpenWrt添加iSCSI Target支持</h3>
 <p>到写作本文为止，貌似OpenWrt官方还没有添加iSCSI Target支持相关的软件包，所以我们需要自力更生。然而幸运的是，已经有前人做过了类似的事情，我们只要采取“拿来主义”即可。  </p>
-<p>相关资源：<br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst</a><br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst</a><br>上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。  </p>
+<p>相关资源：<br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst</a><br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst</a><br>上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。<a id="more"></a>  </p>
 <p>另外还有一个在用户空间实现的方案，详情见：<br><a href="https://dev.openwrt.org/ticket/8798" target="_blank">https://dev.openwrt.org/ticket/8798</a><br><a href="http://patchwork.openwrt.org/patch/2597" target="_blank">http://patchwork.openwrt.org/patch/2597</a>  </p>
 <p>无论上面哪种方案，就目前而言都需要读者自行编译，但是如何交叉编译OpenWrt所需的软件包不在本文的讨论范围。  </p>
 <p>采用第一种方案，进行交叉编译后，会得到以下几个软件包：  </p>
@@ -128,7 +134,18 @@ config device
 <pre><code>reboot
 </code></pre><p>未完待续……</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>本文要介绍的是如何在OpenWrt平台上面搭建无盘工作站服务器以及Windows的iSCSI部署。<br>当然，由于OpenWrt也可以算得上一种Linux发行版了，所以本文所介绍的一些方法，在其它Linux发行版上面仍有一定的参考价值。  </p>
+<p>整个过程大概分为以下几步：  </p>
+<ul>
+<li>给OpenWrt添加iSCSI Target支持</li>
+<li>创建并配置iSCSI Target</li>
+<li>获取gPXE并配置DHCP及TFTP服务</li>
+<li>通过iSCSI部署Windows</li>
+<li>测试</li>
+</ul>
+<h3 id="给OpenWrt添加iSCSI_Target支持">给OpenWrt添加iSCSI Target支持</h3>
+<p>到写作本文为止，貌似OpenWrt官方还没有添加iSCSI Target支持相关的软件包，所以我们需要自力更生。然而幸运的是，已经有前人做过了类似的事情，我们只要采取“拿来主义”即可。  </p>
+<p>相关资源：<br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/scst</a><br><a href="https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst" target="_blank">https://github.com/tobiaswaldvogel/openwrt-addpack/tree/master/luci-app-scst</a><br>上面分别是在OpenWrt的内核层面实现的iSCSI Target支持及其Luci配置界面，读者需要自行获取这两部分的源码然后进行交叉编译，这也是我最终选用的方案，下文关于iSCSI的内容均基于此。]]></summary>
     
       <category term="Windows" scheme="http://blog.nanpuyue.com/tags/Windows/"/>
     
@@ -149,7 +166,7 @@ config device
     <link href="http://blog.nanpuyue.com/2013/027.html"/>
     <id>http://blog.nanpuyue.com/2013/027.html</id>
     <published>2013-02-14T14:29:00.000Z</published>
-    <updated>2013-07-25T02:14:38.000Z</updated>
+    <updated>2014-03-19T19:00:24.000Z</updated>
     <content type="html"><![CDATA[<p>本文要介绍的，是在使用OpenWrt的无线路由器上搭建服务器并以此启动计算机并运行桌面应用的一套方案。  </p>
 <p>整个方案要用到的硬件：  </p>
 <ul>
@@ -165,7 +182,7 @@ config device
 <li>/dev/sda2    swap    16M</li>
 <li>/dev/sda3    ntfs    6.89G</li>
 </ul>
-<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。  </p>
+<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。<a id="more"></a>  </p>
 <p>如果你的路由器剩余空间足够大到可以安装下面的软件包，你可以不用挂载U盘分区到<code>/overlay</code>。总之，在确保路由器有足够空间安装所需软件包后安装<code>nfs-kernel-server-utils</code>即可。<br>    opkg update<br>    opkg install nfs-kernel-server-utils<br>这样，路由器会自动安装<code>nfs-kernel-server-utils</code>及其依赖，当然，在安装是有可能出现内核模块(kmod-*)不能安装的问题，这不在本文的讨论范围。  </p>
 <p>安装好所需软件包后，就是文件的就位和各种配置了。首先你要确定文件存放位置，这里涉及到两个文件夹，一个是网络启动相关的，一个是nfs相关的，前者用于存放网络启动引导文件，后者用于存放Ubuntu的spuashfs文件系统。当然，它们可以是同一个文件夹，但是我并不推荐那样做。  </p>
 <p>最后，我的两个文件夹分别是<code>/mnt/sda3/tftproot</code>和<code>/mnt/sda3/nfsroot</code>。  </p>
@@ -208,7 +225,22 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
 </code></pre><p>你也可以在Web界面的“系统”-“启动项”下控制上面两个服务。  </p>
 <p>至此，整个搭建过程就完成了，剩下的，就是插上网线，重启电脑并选择从网络启动了。<br>然后你会看到下面的界面，这时按下回车或者等待3秒Ubuntu就会启动了，需要提醒的是，启动后与使用CD光盘启动无异，你对系统所做的更改都不会被保存。<br><img src="https://lh6.googleusercontent.com/-U1uPsRcLnKs/UfAMQSLUtGI/AAAAAAAAAVc/7MPKOyVbla4/s0/boot_menu.png" alt="启动菜单"></p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>本文要介绍的，是在使用OpenWrt的无线路由器上搭建服务器并以此启动计算机并运行桌面应用的一套方案。  </p>
+<p>整个方案要用到的硬件：  </p>
+<ul>
+<li>一个刷好OpenWrt的带USB接口和有线网络接口的无线路由器(TP-LINK TL-WR720N V3)</li>
+<li>一个U盘(PNY 8G)</li>
+<li>一根双绞交叉网线</li>
+<li>一台支持网络启动的电脑(Acer 4738G)</li>
+</ul>
+<p>本方案使用的系统为Ubuntu，对版本没有特别的要求，但早期的版本不保证一定能成功，所以首先要准备Ubuntu的Live CD的iso镜像，我使用的是ubuntu-12.04.1-desktop-amd64.iso，如果你的电脑的内存不是很大(我的6G)建议使用32位的镜像。  </p>
+<p>下面正式进入实际操作，第一步是挂载U盘，这个可以灵活一些，我的情况是路由器只有4M Flash空间，不足以安装我所需的所有软件包，所以我将U盘分为三个分区：  </p>
+<ul>
+<li>/dev/sda1    ext4    512M</li>
+<li>/dev/sda2    swap    16M</li>
+<li>/dev/sda3    ntfs    6.89G</li>
+</ul>
+<p>其中<code>sda1</code>挂载到<code>/overlay</code>，<code>sda2</code>是交换分区，而sda3则是数据存储分区，它会被OpenWrt自动挂载到<code>/mnt/sda3</code>，关于挂载U盘分区到<code>/overlay</code>的细节，可以参考<a href="http://blog.nanpuyue.com/2012/011.html">http://blog.nanpuyue.com/2012/011.html</a>的后半部分。]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/categories/Linux/"/>
     
@@ -221,7 +253,7 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
     <link href="http://blog.nanpuyue.com/2013/026.html"/>
     <id>http://blog.nanpuyue.com/2013/026.html</id>
     <published>2013-02-14T05:14:00.000Z</published>
-    <updated>2013-07-25T02:15:30.000Z</updated>
+    <updated>2014-03-19T18:59:29.000Z</updated>
     <content type="html"><![CDATA[<p>这里要讲的，是TP-LINK TL-WR720N V3无线路由器已经刷了OpenWrt的情况下刷回TP-LINK原厂固件的方法。  </p>
 <p>TP-LINK官方目前提供两个版本的原厂固件下载：<br>TL-WR720N V3_120620标准版：<br><a href="http://service.tp-link.com.cn/detail_download_846.html" target="_blank">http://service.tp-link.com.cn/detail_download_846.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin</a>(备用下载)<br>md5sum：<code>43a21a63749479301c495d6b3759e3c7</code><br>TL-WR720N V3_120913标准版：<br><a href="http://service.tp-link.com.cn/detail_download_918.html" target="_blank">http://service.tp-link.com.cn/detail_download_918.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin</a>(备用下载)<br>md5sum：<code>1855f08a4e98f8633a16d5b7102309ac</code>  </p>
 <p>刷回原厂固件也很简单，只要直接在OpenWrt的Web界面升级即可，但是也有几个要注意的地方，否则可能成“砖”！  </p>
@@ -230,7 +262,7 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
 <li>最好先恢复OpenWrt的设置，如果有U盘，也最好先拔掉，并在重启完成后上传固件</li>
 <li>上传固件时一定要去掉“保留配置”的选项</li>
 <li>固件上传后仔细确认校验码确保无误</li>
-<li>固件刷新时绝对不能断电</li>
+<li>固件刷新时绝对不能断电<a id="more"></a></li>
 </ul>
 <p>先说第一条，官方的两个固件版本，120620版的就是经过验证的固件，可刷；而120913版的，就是未经验证的固件，我也不敢验证。细心的同鞋可能会发现两个固件大小有明显差异，具体原因我不确定，不过据说120913版是ver 1.7的硬件专用的。<br>固件版本的问题，搞得不好是要让路由器成砖的，我宁愿先刷120620版再升级120913版(我没有试过)，也不敢直接刷回120913版，事实上，在OpenWrt的Web界面，120913版的固件也是不能通过验证的。也许你可以使用mtd之类的命令强行刷入，但是这样成砖的风险回更大！  </p>
 <p>然后是“保留配置”的选项，这个一定不能选，否则同样可能成砖！  </p>
@@ -238,7 +270,15 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
 <p>整个固件刷新过程可能需要4到5分钟或者更长，一定耐心等待，不能强行断电，有条件的可以使用接触良好的Micro-USB线连接移动电源或带电池笔记本供电，以防突然停电。  </p>
 <p>最后，要注意的是，官方固件的Web管理界面的默认地址是<a href="http://192.168.1.253" target="_blank">http://192.168.1.253</a>。  </p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>这里要讲的，是TP-LINK TL-WR720N V3无线路由器已经刷了OpenWrt的情况下刷回TP-LINK原厂固件的方法。  </p>
+<p>TP-LINK官方目前提供两个版本的原厂固件下载：<br>TL-WR720N V3_120620标准版：<br><a href="http://service.tp-link.com.cn/detail_download_846.html" target="_blank">http://service.tp-link.com.cn/detail_download_846.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120620.bin</a>(备用下载)<br>md5sum：<code>43a21a63749479301c495d6b3759e3c7</code><br>TL-WR720N V3_120913标准版：<br><a href="http://service.tp-link.com.cn/detail_download_918.html" target="_blank">http://service.tp-link.com.cn/detail_download_918.html</a>(官方下载页面)<br><a href="http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin" target="_blank">http://files.nanpuyue.com/openwrt/ar71xx/tl-wr720n-v3/original/tp-link-wr720nv3-120913.bin</a>(备用下载)<br>md5sum：<code>1855f08a4e98f8633a16d5b7102309ac</code>  </p>
+<p>刷回原厂固件也很简单，只要直接在OpenWrt的Web界面升级即可，但是也有几个要注意的地方，否则可能成“砖”！  </p>
+<ul>
+<li>只刷经过验证可刷的固件</li>
+<li>最好先恢复OpenWrt的设置，如果有U盘，也最好先拔掉，并在重启完成后上传固件</li>
+<li>上传固件时一定要去掉“保留配置”的选项</li>
+<li>固件上传后仔细确认校验码确保无误</li>
+<li>固件刷新时绝对不能断电]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/categories/Linux/"/>
     
@@ -251,7 +291,7 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
     <link href="http://blog.nanpuyue.com/2013/025.html"/>
     <id>http://blog.nanpuyue.com/2013/025.html</id>
     <published>2013-01-18T01:49:00.000Z</published>
-    <updated>2013-07-25T02:38:03.000Z</updated>
+    <updated>2014-03-19T18:58:15.000Z</updated>
     <content type="html"><![CDATA[<p>本文的最新版本在<a href="http://blog.nanpuyue.com/2013/025.html">http://blog.nanpuyue.com/2013/025.html</a>  </p>
 <p><strong>本版wineqq基于QQ2012 Beta3(4786)，已在Ubuntu 12.04&amp;12.10下测试通过，同时支持32位和64位操作系统。</strong>  </p>
 <h2 id="下载地址：">下载地址：</h2>
@@ -261,8 +301,8 @@ append root=<span class="regexp">/dev/nfs</span> boot=casper netboot=nfs nfsroot
 <li>不再集成QQ安装包及微软的dll,所需文件均改由互联网获取</li>
 <li>历史版本不再提供下载</li>
 </ul>
-<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong>  </p>
-<h2 id="deb包安装：">deb包安装：</h2>
+<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong><br><a id="more"></a></p>
+<h2 id="deb包安装">deb包安装</h2>
 <p>64位系统差一个共享厍文件并且还需要安装ia32-libs：  </p>
 <pre><code>sudo wget <span class="attribute">-P</span> <span class="string">'/usr/lib/i386-linux-gnu/pkcs11'</span> <span class="string">'http://files.nanpuyue.com/ubuntu/wineqq/so/gnome-keyring-pkcs11.so'</span>
 sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">-libs</span>
@@ -284,7 +324,16 @@ sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">
 <pre><code>qq2012 <span class="operator"><span class="keyword">start</span></span>
 </code></pre><p>桌面快捷方式，上面那个可以删除，双击即可打开QQ<br><img src="https://lh5.googleusercontent.com/-LDeedfJACTI/UfCNfGAgt7I/AAAAAAAAAbs/Hd1FoBsOj-0/s0/快捷方式.png" alt="快捷方式"><br>登录界面，密码框不会崩溃<br><img src="https://lh6.googleusercontent.com/-AFdaTz8wWG0/UfCNhicDxzI/AAAAAAAAAcI/5LiphBN5Wbs/s0/登录界面.png" alt="登录界面"><br><strong>关闭自动更新</strong><br>主面板，没有黑框和残影，<strong>现在要做的第一件事应该是取消自动更新，因为更新会造成QQ无法打开！</strong><br><img src="https://lh4.googleusercontent.com/-5n51gQO6BRI/UfCNfXCy_MI/AAAAAAAAAbo/S92bWQ8AuAw/s0/主面版.png" alt="主面板"><br><strong>如果面板上已经出现软件更新的图标，请直接在上面单击右键，然后点“退出”，再继续下面的设置：</strong><br><img src="https://lh4.googleusercontent.com/-vInMlEwXcE0/UfCNizP8FgI/AAAAAAAAAcU/qt8LMhJi2QY/s0/退出更新.png" alt="退出更新"><br>单击你的头像，进入设置，再单击“系统设置”<br><img src="https://lh6.googleusercontent.com/-rHo9rhJ_6Ts/UfCNhh8bJkI/AAAAAAAAAcE/P0D5sEjBlhc/s0/设置.png" alt="设置"><br>单击“基本设置”下的“软件更新”，选<strong>“有更新时不要安装，但提醒我”</strong>，然后“确定”<br><img src="https://lh3.googleusercontent.com/-TGtH6ZarCPU/UfCNjG3q3-I/AAAAAAAAAcY/0EQuNcM7gWs/s0/软件更新设置.png" alt="软件更新设置"><br><strong>可以调用系统字体</strong><br><img src="https://lh5.googleusercontent.com/-o8LNDdVzr7Y/UfCNh1ftb9I/AAAAAAAAAcQ/NBX5g91DnQA/s0/调用系统字体.png" alt="调用系统字体"><br>文件发送和接收都是正常的<br><img src="https://lh6.googleusercontent.com/-cuK9ObbaBMw/UfCNgbQQ6XI/AAAAAAAAAb4/43MdxIBXNQs/s0/文件发送.png" alt="文件发送"><br>除本地视频可能不可用以外，其他功能也基本正常，也不会无故崩溃，欢迎测试。<br>还有两个推荐设置，按下图设置后，可以最小化QQ，单击Ubuntu面板上的QQ图标即可呼出：<br><img src="https://lh5.googleusercontent.com/-f1b_tYAF6BM/UfCNfAmkoxI/AAAAAAAAAbk/SG45LKZmbdE/s0/推荐设置.png" alt="推荐设置">  </p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>本文的最新版本在<a href="http://blog.nanpuyue.com/2013/025.html">http://blog.nanpuyue.com/2013/025.html</a>  </p>
+<p><strong>本版wineqq基于QQ2012 Beta3(4786)，已在Ubuntu 12.04&amp;12.10下测试通过，同时支持32位和64位操作系统。</strong>  </p>
+<h2 id="下载地址：">下载地址：</h2>
+<h4 id="deb包">deb包</h4>
+<p>2013年2月13日：wine-qq2012-nanpuyue_2013-2-13.deb<br><a href="http://s.yunio.com/FMRdMx" target="_blank">http://s.yunio.com/FMRdMx</a>(云诺)<br>md5sum：78a08830579a5dd8023092e94c87bf8f<br>更新内容：  </p>
+<ul>
+<li>不再集成QQ安装包及微软的dll,所需文件均改由互联网获取</li>
+<li>历史版本不再提供下载</li>
+</ul>
+<p><strong>deb包已集成自编译的Wine 1.5.22，系统无需安装Wine亦可使用</strong><br>]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/categories/Linux/"/>
     
@@ -329,13 +378,15 @@ sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">
     <link href="http://blog.nanpuyue.com/2012/018.html"/>
     <id>http://blog.nanpuyue.com/2012/018.html</id>
     <published>2012-11-17T04:00:00.000Z</published>
-    <updated>2013-07-25T02:44:45.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.linuxdeepin.com" target="_blank">Linux Deepin</a>是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。<br>这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。<br><img src="https://lh5.googleusercontent.com/-g6c4KqOos0M/UfCQSQoTwQI/AAAAAAAAAdY/51XA3kAPrRI/s0/深度影音.png" alt="深度影音"><br>总之，这些优点要你自己用了才知道了，所以下面就直接进入正题了。<br>要在Ubuntu上安装深度影音&amp;深度音乐，可以通过安装深度软件中心并添加深度的软件源来实现，但是并不推荐。这里讲手动下载安装，也很简单，但是相比之下更可控，更稳定，不会对系统造成其他不可预测的影响。<br>深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player)均依赖于deepin-ui、python-deepin-utils，deepin-gsettings，而deepin这个包Ubuntu的软件源中是没有的，所以我们要手动下载4个包：python-deepin-utils、deepin-ui、deepin-media-player、deepin-music-player。</p>
+    <updated>2014-03-19T18:56:30.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.linuxdeepin.com" target="_blank">Linux Deepin</a>是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。<br>这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。<br><img src="https://lh5.googleusercontent.com/-g6c4KqOos0M/UfCQSQoTwQI/AAAAAAAAAdY/51XA3kAPrRI/s0/深度影音.png" alt="深度影音"><a id="more"></a><br>总之，这些优点要你自己用了才知道了，所以下面就直接进入正题了。<br>要在Ubuntu上安装深度影音&amp;深度音乐，可以通过安装深度软件中心并添加深度的软件源来实现，但是并不推荐。这里讲手动下载安装，也很简单，但是相比之下更可控，更稳定，不会对系统造成其他不可预测的影响。<br>深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player)均依赖于deepin-ui、python-deepin-utils，deepin-gsettings，而deepin这个包Ubuntu的软件源中是没有的，所以我们要手动下载4个包：python-deepin-utils、deepin-ui、deepin-media-player、deepin-music-player。</p>
 <ul>
 <li>python-deepin-utils：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-utils/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-utils/</a></li>
 <li>deepin-ui：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-ui/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-ui/</a>  </li>
-<li>deepin-gsettings：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/</a><br>(选择对应的最新版本，32位系统下载带i386的，64位系统下载带amd64的)</li>
-<li>deepin-media-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/</a></li>
+<li><p>deepin-gsettings：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-gsettings/</a><br>(选择对应的最新版本，32位系统下载带i386的，64位系统下载带amd64的)</p>
+</li>
+<li><p>deepin-media-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-media-player/</a></p>
+</li>
 <li>deepin-music-player：<a href="http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-music-player/" target="_blank">http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-music-player/</a><br>(选择最新的即可，不区分32位和64位) </li>
 </ul>
 <p>然后安装下载的deb包，可以双击安装，但是一定要先安装deepin-ui；也可以使用dpkg安装，可以将三个deb包放到一个文件夹，然后在终端中进入该文件夹，运行如下命令：  </p>
@@ -345,7 +396,7 @@ sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">
 <p>Enjoy it!</p>
 <p>————————Update————————<br>2013-5-27：新增依赖项deepin-gsettings</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p><a href="http://www.linuxdeepin.com" target="_blank">Linux Deepin</a>是国人开发的一个Linux发行版，有很多“中国特色”的东西，比如Wine的QQ和迅雷，值得一试。<br>这里要推荐的是Deepin自家开发的深度影音(deepin-media-player)&amp;深度音乐(deepin-music-player),相比Ubuntu预装的Totem和Rhythmbox多了很多实用功能，界面也美观一些，对中文支持比较好(毕竟是国人自己开发的)。<br><img src="https://lh5.googleusercontent.com/-g6c4KqOos0M/UfCQSQoTwQI/AAAAAAAAAdY/51XA3kAPrRI/s0/深度影音.png" alt="深度影音">]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/tags/Linux/"/>
     
@@ -433,14 +484,14 @@ sudo apt<span class="attribute">-get</span> install ia32<span class="attribute">
     <link href="http://blog.nanpuyue.com/2012/012.html"/>
     <id>http://blog.nanpuyue.com/2012/012.html</id>
     <published>2012-10-15T04:00:00.000Z</published>
-    <updated>2013-04-09T10:28:26.000Z</updated>
+    <updated>2014-03-19T18:52:35.000Z</updated>
     <content type="html"><![CDATA[<p>前提：拥有一个带USB接口的并且已刷OpenWrt的路由器，路由器可以联网。  </p>
 <p>将U盘挂载到路由器上，这个不在本文讨论范围之类，故假设U盘已经挂在到/mnt/sda1。<br>通过SSH登录路由器，在/mnt/sda1下新建一个文件夹名曰pxe：  </p>
 <pre><code><span class="keyword">mkdir</span> -p /mnt/sda1/pxe
 </code></pre><p>下载Debian的网络启动相关文件，文件可以在Debian的ftp上找到:<br><a href="ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/</a><br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/</a>  </p>
 <p>上面分别是两个版本的启动文件，其子目录gtk下也是一套独立的启动文件，是有图形安装界面的。<br>下载要下载整个目录，不需要图形界面的gtk这个目录可以不要，要图形界面的可以只下载gtk这个目录。<br>最好是在Linux下使用wget进行递归下载，因为ftp中有些文件和目录是以链接的形式存在的，在Windows下下载可能造成链接丢失从而导致文件不全。<br>比如：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
-</code></pre><p>或者：  </p>
+</code></pre><p><a id="more"></a>或者：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> squeeze<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/gtk/</span>
 </code></pre><p>如果下载很慢，可以换用国内镜像：  </p>
 <pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//mirrors.ustc.edu.cn/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
@@ -461,7 +512,13 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
 <p><img src="//img.nanpuyue.com/upload/2012/10/27/20121027153310-9ba8094a.png" alt="设置">  </p>
 <p>然后点击下方的“保存&amp;应用”。<br>这样，整个搭建过程就完成了，剩下的，只需要将电脑或者服务器接到路由器LAN口，并选择从网络启动即可。</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>前提：拥有一个带USB接口的并且已刷OpenWrt的路由器，路由器可以联网。  </p>
+<p>将U盘挂载到路由器上，这个不在本文讨论范围之类，故假设U盘已经挂在到/mnt/sda1。<br>通过SSH登录路由器，在/mnt/sda1下新建一个文件夹名曰pxe：  </p>
+<pre><code><span class="keyword">mkdir</span> -p /mnt/sda1/pxe
+</code></pre><p>下载Debian的网络启动相关文件，文件可以在Debian的ftp上找到:<br><a href="ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/</a><br><a href="ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/">ftp://ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/</a>  </p>
+<p>上面分别是两个版本的启动文件，其子目录gtk下也是一套独立的启动文件，是有图形安装界面的。<br>下载要下载整个目录，不需要图形界面的gtk这个目录可以不要，要图形界面的可以只下载gtk这个目录。<br>最好是在Linux下使用wget进行递归下载，因为ftp中有些文件和目录是以链接的形式存在的，在Windows下下载可能造成链接丢失从而导致文件不全。<br>比如：  </p>
+<pre><code>wget <span class="subst">--</span>cut<span class="attribute">-dirs</span><span class="subst">=</span><span class="number">9</span> <span class="attribute">-nH</span> <span class="attribute">-P</span> wheezy<span class="attribute">-netboot</span><span class="attribute">-gtk</span> <span class="attribute">-r</span> ftp:<span class="comment">//ftp.debian.org/debian/dists/wheezy/main/installer-i386/current/images/netboot/gtk/</span>
+</code></pre><p>]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/tags/Linux/"/>
     
@@ -480,9 +537,9 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
     <link href="http://blog.nanpuyue.com/2012/011.html"/>
     <id>http://blog.nanpuyue.com/2012/011.html</id>
     <published>2012-10-13T04:00:00.000Z</published>
-    <updated>2013-07-25T02:21:54.000Z</updated>
+    <updated>2014-03-19T18:54:25.000Z</updated>
     <content type="html"><![CDATA[<h3 id="固件信息">固件信息</h3>
-<p>系统名称    OpenWrt<br>路由型号    TP-Link TL-WR720N v3<br>固件版本    OpenWrt Barrier Breaker r35420 / LuCI Trunk (trunk+svn9664)<br>内核版本    3.7.5<br>编译时间    2013年2月2日<br>编译者    <a href="http://blog.nanpuyue.com">南浦月</a><br><img src="https://lh3.googleusercontent.com/-mwcUuTpAz1g/UfAMQFsKpcI/AAAAAAAAAVY/RdC975YXX2I/s0/TL-WR720N.png" alt="TL-WR720N">  </p>
+<p>系统名称    OpenWrt<br>路由型号    TP-Link TL-WR720N v3<br>固件版本    OpenWrt Barrier Breaker r35420 / LuCI Trunk (trunk+svn9664)<br>内核版本    3.7.5<br>编译时间    2013年2月2日<br>编译者    <a href="http://blog.nanpuyue.com">南浦月</a><br><img src="https://lh3.googleusercontent.com/-mwcUuTpAz1g/UfAMQFsKpcI/AAAAAAAAAVY/RdC975YXX2I/s0/TL-WR720N.png" alt="TL-WR720N"><a id="more"></a>  </p>
 <h3 id="固件特性">固件特性</h3>
 <p>调整：  </p>
 <ul>
@@ -528,7 +585,8 @@ tar <span class="attribute">-xzvf</span> wheezy<span class="attribute">-netboot<
 <pre><code>make image PROFILE=<span class="string">"TLWR720"</span> PACKAGES=<span class="string">"luci luci-theme-bootstrap luci-i18n-chinese -kmod-usb2 -kmod-usb-core"</span> FILES=<span class="built_in">files</span>/
 </code></pre><p><code>PROFILE=</code>后跟的参数是要生成固件的路由器型号，使用<code>make info</code>可以查看可用型号列表，<code>PACKAGES=</code>后的参数是在默认软件包的基础上要添加或删除的软件包，软件包名前加减号表示删除，<code>FILES=</code>后则是要在固件中额外添加的文件。</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<h3 id="固件信息">固件信息</h3>
+<p>系统名称    OpenWrt<br>路由型号    TP-Link TL-WR720N v3<br>固件版本    OpenWrt Barrier Breaker r35420 / LuCI Trunk (trunk+svn9664)<br>内核版本    3.7.5<br>编译时间    2013年2月2日<br>编译者    <a href="http://blog.nanpuyue.com">南浦月</a><br><img src="https://lh3.googleusercontent.com/-mwcUuTpAz1g/UfAMQFsKpcI/AAAAAAAAAVY/RdC975YXX2I/s0/TL-WR720N.png" alt="TL-WR720N">]]></summary>
     
       <category term="OpenWrt" scheme="http://blog.nanpuyue.com/tags/OpenWrt/"/>
     
@@ -570,12 +628,12 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
     <link href="http://blog.nanpuyue.com/2012/006.html"/>
     <id>http://blog.nanpuyue.com/2012/006.html</id>
     <published>2012-05-28T04:00:00.000Z</published>
-    <updated>2013-03-10T10:52:18.000Z</updated>
+    <updated>2014-03-19T18:54:56.000Z</updated>
     <content type="html"><![CDATA[<p>如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。<br>官方下载页面：<br><a href="http://goo.gl/M5n3o" target="_blank">vSphere 5.0.1 Virtual Disk Development Kit</a><br><a href="http://goo.gl/aYNS1" target="_blank">vSphere 5.0.2 Virtual Disk Development Kit</a><br>要在官方下载，需要注册并登录，读者请自行完成。<br>下载后首先安装，Windows下安装很简单，Linux下的安装下面会讲，以Ubuntu 12.04为例。<br>Windows下和Linux下的用法大同小异，我只举出几个例子。  </p>
 <h2 id="Windows">Windows</h2>
 <p>使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。<br>但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:<br>单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  </p>
 <pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>
-</code></pre><p>我们添加后变成：  </p>
+</code></pre><p><a id="more"></a>我们添加后变成：  </p>
 <pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>;C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin
 </code></pre><p>这样以后要使用挂载的命令就不必进入安装目录，而是可以直接使用。<br>要挂载一个虚拟磁盘：  </p>
 <pre><code>vmware-mount <span class="constant">Z</span><span class="symbol">:</span> <span class="constant">D</span><span class="symbol">:ubuntu</span>.vmdk /<span class="symbol">v:</span><span class="number">1</span>
@@ -607,7 +665,11 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
 <pre><code><span class="comment">vmware</span><span class="literal">-</span><span class="comment">mount</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">help</span>
 </code></pre><p>更新历史：<br>2013-1-3:添加vSphere 5.0.2 Virtual Disk Development Kit下载地址，其他修正。</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>如标题所说，这里需要用到一个工具：Virtual Disk Development Kit，这是Vmware的产品，不过是免费的。<br>官方下载页面：<br><a href="http://goo.gl/M5n3o" target="_blank">vSphere 5.0.1 Virtual Disk Development Kit</a><br><a href="http://goo.gl/aYNS1" target="_blank">vSphere 5.0.2 Virtual Disk Development Kit</a><br>要在官方下载，需要注册并登录，读者请自行完成。<br>下载后首先安装，Windows下安装很简单，Linux下的安装下面会讲，以Ubuntu 12.04为例。<br>Windows下和Linux下的用法大同小异，我只举出几个例子。  </p>
+<h2 id="Windows">Windows</h2>
+<p>使用命令提示符，进入vmware-mount所在的路径，如“C:\Program Files\VMware\VMware Virtual Disk Development Kit\bin”，当然，具体路径要看你安装好的路径。<br>但是我推荐将vmware-mount.exe所在的路径加入环境变量，方法是这样的:<br>单击开始，在搜索框中输入“环境变量”，出现两个结果，一个“编辑用户环境变量”，一个“编辑系统环境变量”，按你的需要选择一个即可，比如，我们单击“编辑用户环境变量”，然后在弹出的窗口的下部，有一个变量叫“Path”,我们单击选中，然后单击下面的“编辑”，在弹出的窗口中添加上vmware-mount.exe所在的路径即可；注意，比如原来的值是：  </p>
+<pre><code><span class="variable">%SystemRoot</span><span class="variable">%\</span>system32;<span class="variable">%SystemRoot</span><span class="variable">%;</span><span class="variable">%SystemRoot</span><span class="variable">%\</span>System32\Wbem;<span class="variable">%SYSTEMROOT</span><span class="variable">%\</span>System32\WindowsPowerShellv1<span class="number">.0</span>
+</code></pre><p>]]></summary>
     
       <category term="Linux" scheme="http://blog.nanpuyue.com/tags/Linux/"/>
     
@@ -624,7 +686,7 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
     <link href="http://blog.nanpuyue.com/2012/002.html"/>
     <id>http://blog.nanpuyue.com/2012/002.html</id>
     <published>2012-03-22T04:00:00.000Z</published>
-    <updated>2013-03-04T12:42:40.000Z</updated>
+    <updated>2014-03-19T18:46:41.000Z</updated>
     <content type="html"><![CDATA[<h3 id="搭建编译环境">搭建编译环境</h3>
 <p>Ubuntu x64 12.04下的命令：  </p>
 <pre><code>sudo apt<span class="attribute">-get</span> install subversion
@@ -640,7 +702,7 @@ sudo apt<span class="attribute">-get</span> install libncurses5<span class="attr
 <pre><code>mkdir openwrt
 cd openwrt
 svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
-</code></pre><p>trunk是openwrt的开发版，openwrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的openwrt中文论坛所建的镜像。</p>
+</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br><a id="more"></a></p>
 <h3 id="更新feed及添加package">更新feed及添加package</h3>
 <p>openwrt的一些额外功能都是通过package实现的，很多个package就组成了一个feed，我们可以根据需求更新自己想要的feed的源。 例如我们需要luci的web管理界面和python的支持，那么我们需要更新luci和packages的feed源：  </p>
 <pre><code><span class="built_in">cd</span> trunk
@@ -665,7 +727,22 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
 </code></pre><p>-j 后面可以跟参数，即同时进行的任务数，比如2或4，不跟参数意为不限制同时进行的任务数，会大大减少编译的时间，特别是首次编译。<br>编译过程中可能不会下载一些东西，所以断网可能造成编译中断，编译所需时间与你的CPU及网速有很大关系，一般首次编译在40分钟到2小时之间不等。以后的编译一般在30分钟之内。</p>
 <h3 id="生成的固件在~/openwrt/trunk/bin/XXXXX目录下。">生成的固件在~/openwrt/trunk/bin/XXXXX目录下。</h3>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<h3 id="搭建编译环境">搭建编译环境</h3>
+<p>Ubuntu x64 12.04下的命令：  </p>
+<pre><code>sudo apt<span class="attribute">-get</span> install subversion
+sudo apt<span class="attribute">-get</span> install git
+sudo apt<span class="attribute">-get</span> install flex
+sudo apt<span class="attribute">-get</span> install g<span class="subst">++</span>
+sudo apt<span class="attribute">-get</span> install gawk
+sudo apt<span class="attribute">-get</span> install zlib1g<span class="attribute">-dev</span>
+sudo apt<span class="attribute">-get</span> install libncurses5<span class="attribute">-dev</span>
+</code></pre><p>当然，也可以将上面的命令合起来：  </p>
+<pre><code>sudo apt<span class="attribute">-get</span> install subversion git flex g<span class="subst">++</span> gawk zlib1g<span class="attribute">-dev</span> libncurses5<span class="attribute">-dev</span>
+</code></pre><h3 id="建立工作目录及获取openwrt源码">建立工作目录及获取openwrt源码</h3>
+<pre><code>mkdir openwrt
+cd openwrt
+svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
+</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br>]]></summary>
     
       <category term="OpenWrt" scheme="http://blog.nanpuyue.com/tags/OpenWrt/"/>
     
@@ -686,7 +763,7 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
     <link href="http://blog.nanpuyue.com/2012/003.html"/>
     <id>http://blog.nanpuyue.com/2012/003.html</id>
     <published>2012-03-22T04:00:00.000Z</published>
-    <updated>2013-07-25T02:49:22.000Z</updated>
+    <updated>2014-03-19T18:55:33.000Z</updated>
     <content type="html"><![CDATA[<p>OH3C是基于Openwrt路由器固件平台的H3C 802.1x兼容客户端，基于YaH3C开发。</p>
 <p>目前已经实现的功能有：</p>
 <ul>
@@ -697,7 +774,7 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
 <p>项目主页：<br>Github：<a href="https://github.com/nanpuyue/oh3c" target="_blank">https://github.com/nanpuyue/oh3c</a><br>Google Code：<a href="https://code.google.com/p/oh3c" target="_blank">https://code.google.com/p/oh3c</a>  </p>
 <p>下载：<br><a href="https://code.google.com/p/oh3c/downloads/list" target="_blank">https://code.google.com/p/oh3c/downloads/list</a>  </p>
 <h2 id="前提">前提</h2>
-<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。<br><img src="https://lh3.googleusercontent.com/-bUwNCZtKOSs/UfARRB4yVYI/AAAAAAAAAZg/Wfff7Y1E4Wc/s0/telnet.png" alt="Putty telnet"><br><img src="https://lh4.googleusercontent.com/-1IZ5YCfdNM8/UfARMcr-xjI/AAAAAAAAAZI/N8xBvutIZdQ/s0/ssh.png" alt="Putty ssh"><br>你还可以在Saved Sessions下面填上一个名称，然后点击保存，以后直接在下面点击这个名称，再点Load、Open就可以登录了。 需要注意的是登录ssh是需要输入你设置的密码，但是密码不会显示，对，连星号都不会显示，只管输入就是了。<br><img src="https://lh6.googleusercontent.com/-MpB2v7dgSIE/UfARN8ruTWI/AAAAAAAAAZY/NVNwBWN8qpI/s0/ssh_login.png" alt="ssh login"></p>
+<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。<a id="more"></a><br><img src="https://lh3.googleusercontent.com/-bUwNCZtKOSs/UfARRB4yVYI/AAAAAAAAAZg/Wfff7Y1E4Wc/s0/telnet.png" alt="Putty telnet"><br><img src="https://lh4.googleusercontent.com/-1IZ5YCfdNM8/UfARMcr-xjI/AAAAAAAAAZI/N8xBvutIZdQ/s0/ssh.png" alt="Putty ssh"><br>你还可以在Saved Sessions下面填上一个名称，然后点击保存，以后直接在下面点击这个名称，再点Load、Open就可以登录了。 需要注意的是登录ssh是需要输入你设置的密码，但是密码不会显示，对，连星号都不会显示，只管输入就是了。<br><img src="https://lh6.googleusercontent.com/-MpB2v7dgSIE/UfARN8ruTWI/AAAAAAAAAZY/NVNwBWN8qpI/s0/ssh_login.png" alt="ssh login"></p>
 <h2 id="依赖">依赖</h2>
 <ul>
 <li>python-mini</li>
@@ -798,7 +875,17 @@ opkg install luci<span class="attribute">-theme</span><span class="attribute">-b
 <p>另外，如果你的路由器仅有4M flash，建议自己编译固件，你可以在编译openwrt时去掉和PPP和PPPOE相关的包，这样固件体积会缩小很多。</p>
 <p>如果使用中有任何问题，欢迎反馈：<br><a href="https://code.google.com/p/oh3c/issues/list" target="_blank">https://code.google.com/p/oh3c/issues/list</a></p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>OH3C是基于Openwrt路由器固件平台的H3C 802.1x兼容客户端，基于YaH3C开发。</p>
+<p>目前已经实现的功能有：</p>
+<ul>
+<li>H3C 802.1x认证</li>
+<li>多用户管理</li>
+<li>mac绑定设置及自动修改mac</li>
+</ul>
+<p>项目主页：<br>Github：<a href="https://github.com/nanpuyue/oh3c" target="_blank">https://github.com/nanpuyue/oh3c</a><br>Google Code：<a href="https://code.google.com/p/oh3c" target="_blank">https://code.google.com/p/oh3c</a>  </p>
+<p>下载：<br><a href="https://code.google.com/p/oh3c/downloads/list" target="_blank">https://code.google.com/p/oh3c/downloads/list</a>  </p>
+<h2 id="前提">前提</h2>
+<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。]]></summary>
     
       <category term="802.1x" scheme="http://blog.nanpuyue.com/tags/802.1x/"/>
     

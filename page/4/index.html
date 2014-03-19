@@ -86,31 +86,11 @@ sudo apt<span class="attribute">-get</span> install libncurses5<span class="attr
 <pre><code>mkdir openwrt
 cd openwrt
 svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
-</code></pre><p>trunk是openwrt的开发版，openwrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的openwrt中文论坛所建的镜像。</p>
-<h3 id="更新feed及添加package">更新feed及添加package</h3>
-<p>openwrt的一些额外功能都是通过package实现的，很多个package就组成了一个feed，我们可以根据需求更新自己想要的feed的源。 例如我们需要luci的web管理界面和python的支持，那么我们需要更新luci和packages的feed源：  </p>
-<pre><code><span class="built_in">cd</span> trunk
-./scripts/feeds update luci packages
-./scripts/feeds install luci packages
-</code></pre><p>当然，我们推荐更新所有feed并添加所有package  </p>
-<pre><code>./scripts/feeds update <span class="operator">-a</span>
-./scripts/feeds install <span class="operator">-a</span>
-</code></pre><h3 id="配置及编译">配置及编译</h3>
-<p>进入配置界面  </p>
-<pre><code><span class="built_in">make</span> menuconfig
-</code></pre><p>以后再次编译时，要先切换到工作目录：  </p>
-<pre><code><span class="built_in">cd</span> openwrt
-<span class="built_in">cd</span> trunk
-</code></pre><p>然后在次过程中选择好target system和target profile，target system需要看你路由器的cpu芯片信息，target profile是你路由器的型号。接下来就可以根据自己的需求进行定制了，添加上需要的支持或去掉无用的包，按“Y”在固件中添加包按“Y”,按“N”去 掉不需要的包。<br>要运行OH3C，必须有python-mini（lang-&gt;python-&gt;python-mini)的支持。<br>如果你的路由器flash空间比较紧张，可以去掉下面的包:  </p>
-<ul>
-<li>Kernel modules-&gt;Network Support-&gt;kmod-ppp</li>
-<li>Network-&gt;ppp</li>
-</ul>
-<p>选好后就保存配置退出开始编译了：  </p>
-<pre><code>make <span class="attribute">-j</span>
-</code></pre><p>-j 后面可以跟参数，即同时进行的任务数，比如2或4，不跟参数意为不限制同时进行的任务数，会大大减少编译的时间，特别是首次编译。<br>编译过程中可能不会下载一些东西，所以断网可能造成编译中断，编译所需时间与你的CPU及网速有很大关系，一般首次编译在40分钟到2小时之间不等。以后的编译一般在30分钟之内。</p>
-<h3 id="生成的固件在~/openwrt/trunk/bin/XXXXX目录下。">生成的固件在~/openwrt/trunk/bin/XXXXX目录下。</h3>
-
+</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br>
+      <div class="alignright">
+        <a href="/2012/002.html" class="more-link">阅读全文</a>
+      </div>
+      <div class="clearfix"></div>
     
     
     <footer class="meta">
@@ -128,6 +108,7 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
   </div>
   
 </article>
+
 
   <article class="post">
   
@@ -165,107 +146,11 @@ svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/op
 <p>项目主页：<br>Github：<a href="https://github.com/nanpuyue/oh3c" target="_blank">https://github.com/nanpuyue/oh3c</a><br>Google Code：<a href="https://code.google.com/p/oh3c" target="_blank">https://code.google.com/p/oh3c</a>  </p>
 <p>下载：<br><a href="https://code.google.com/p/oh3c/downloads/list" target="_blank">https://code.google.com/p/oh3c/downloads/list</a>  </p>
 <h2 id="前提">前提</h2>
-<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。<br><img src="https://lh3.googleusercontent.com/-bUwNCZtKOSs/UfARRB4yVYI/AAAAAAAAAZg/Wfff7Y1E4Wc/s0/telnet.png" alt="Putty telnet"><br><img src="https://lh4.googleusercontent.com/-1IZ5YCfdNM8/UfARMcr-xjI/AAAAAAAAAZI/N8xBvutIZdQ/s0/ssh.png" alt="Putty ssh"><br>你还可以在Saved Sessions下面填上一个名称，然后点击保存，以后直接在下面点击这个名称，再点Load、Open就可以登录了。 需要注意的是登录ssh是需要输入你设置的密码，但是密码不会显示，对，连星号都不会显示，只管输入就是了。<br><img src="https://lh6.googleusercontent.com/-MpB2v7dgSIE/UfARN8ruTWI/AAAAAAAAAZY/NVNwBWN8qpI/s0/ssh_login.png" alt="ssh login"></p>
-<h2 id="依赖">依赖</h2>
-<ul>
-<li>python-mini</li>
-</ul>
-<p>或者使用python-mini-oh3c代替，python-mini-oh3c在<a href="https://code.google.com/p/oh3c/downloads/list" target="_blank">本项目下载页面</a>下载。 下面是快速下载链接：<br><a href="https://oh3c.googlecode.com/files/python-mini-oh3c_2.6.4-4_ar71xx.ipk" target="_blank">python-mini-oh3c_2.6.4-4_ar71xx.ipk</a><br><a href="https://oh3c.googlecode.com/files/python-mini-oh3c_2.6.4-4_brcm63xx.ipk" target="_blank">python-mini-oh3c_2.6.4-4_brcm63xx.ipk</a><br><a href="https://oh3c.googlecode.com/files/python-mini-oh3c_2.7.3-1_ar71xx.ipk" target="_blank">python-mini-oh3c_2.7.3-1_ar71xx.ipk</a><br>一般的openwrt固件不包含python的支持，所以你可以自行编译一个带python-mini的固件，或者直接在路由器里面利用包管理软件安装python-mini(路由器须联网):  </p>
-<pre><code>opkg <span class="operator"><span class="keyword">update</span>
-opkg install python-mini</span>
-</code></pre><p>如果无法联网，可以下载python-mini或者python-mini-oh3c，上传到路由器的/tmp目录，建议windows用户使用<a href="http://winscp.net/eng/docs/lang:chs" target="_blank">Winscp</a>上传文件！再ssh登录路由器安装：  </p>
-<pre><code>opkg <span class="keyword">install</span> /tmp/python-mini*.ipk
-</code></pre><p>安装时如果提示依赖zlib而无法安装，请<a href="http://downloads.openwrt.org/attitude_adjustment/12.09-rc1/" target="_blank">下载zlib</a>上传到路由器/tmp目录。 先安装zlib，再安装python-mini或python-mini-oh3c：  </p>
-<pre><code>opkg <span class="keyword">install</span> /tmp/zlib*.ipk
-opkg <span class="keyword">install</span> /tmp/python-mini*.ipk
-</code></pre><h2 id="安装OH3C">安装OH3C</h2>
-<p>OH3C目前有两个版本，一个web界面控制版，需luci支持：luci-app-oh3c，还有一个命令行版，没有web界面，两个版本不能共存，只能任选其一。<br>如果你使用的是trunk版的openwrt，建议使用luci-app-oh3c:<br><a href="https://oh3c.googlecode.com/files/luci-app-oh3c_2013-2-6_all.ipk" target="_blank">luci-app-oh3c_2013-2-6_all.ipk</a><br>带Web界面的版本可以使用命令传递参数使用，用法是：  </p>
-<pre><code>python /usr/oh3c/oh3c.py <span class="tag">&lt;<span class="title">username</span>&gt;</span> <span class="tag">&lt;<span class="title">password</span>&gt;</span> <span class="tag">&lt;<span class="title">dev</span>&gt;</span> <span class="tag">&lt;<span class="title">mac</span>&gt;</span>
-</code></pre><p>如果不绑定mac，mac一项可以使用default，下面是自启脚本，只适用于带web界面的版本：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-</pre></td><td class="code"><pre><span class="comment">#!/bin/sh /etc/rc.common</span>
-<span class="comment"># Copyright (C) 2012 OpenWrt.org</span>
-<span class="comment"># Copyright (C) 2013 nanpuyue@gmail.com</span>
-
-START=<span class="number">90</span>
-
-current=`uci get oh3ctest.@control[<span class="number">0</span>].current`
-ifname=`uci get oh3ctest.@control[<span class="number">0</span>].ifname`
-
-<span class="keyword">for</span> i <span class="keyword">in</span> `seq <span class="number">0</span> <span class="number">10</span>`;<span class="keyword">do</span>
-	username=`uci get oh3ctest.@userinfo[<span class="variable">$i</span>].username`;
-	<span class="keyword">if</span> [ <span class="variable">$username</span> = <span class="variable">$current</span> ];<span class="keyword">then</span>
-		password=`uci get oh3ctest.@userinfo[<span class="variable">$i</span>].password`
-		macaddr=`uci get oh3ctest.@userinfo[<span class="variable">$i</span>].macaddr`
-		<span class="keyword">break</span>
-	<span class="keyword">fi</span>;
-<span class="keyword">done</span>
-
-<span class="function"><span class="title">start</span></span>() {
-python /usr/oh3c/oh3c.py <span class="variable">$current</span> <span class="variable">$password</span> <span class="variable">$ifname</span> <span class="variable">$macaddr</span> &gt;&gt; /tmp/log/oh3c
-}
-
-<span class="function"><span class="title">stop</span></span>() {
-pid=`ps | grep /usr/oh3c/oh3c.py | grep -v grep | awk <span class="string">'{printf $1}'</span>`
-<span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$pid</span>"</span> ];<span class="keyword">then</span>
-	kill <span class="variable">$pid</span>
-<span class="keyword">fi</span>
-}
-
-<span class="function"><span class="title">restart</span></span>() {
-stop
-start
-}
-</pre></td></tr></table></figure>
-
-<p>将脚本保存为<code>/etc/init.d/oh3c</code>，运行<code>/etc/init.d/oh3c enable</code>启用自启动。  </p>
-<p>dreambox由于暂时有兼容性问题，所以不能使用带luci界面支持的，请下载下面命令行版本包：<br><a href="https://oh3c.googlecode.com/files/oh3c_2013-2-6_all.ipk" target="_blank">oh3c_2013-2-6_all.ipk</a>  </p>
-<p>在Linux下使用命令行上传文件想来对于Linux用户不是难事，就略过了。  </p>
-<h2 id="使用OH3C">使用OH3C</h2>
-<p>安装luci-app-oh3c的童鞋，使用浏览器从web端登录路由器，OH3C控制入口在Network[网络]——OH3C。 另外建议使用主题bootstrap:  </p>
-<pre><code>opkg update
-opkg install luci<span class="attribute">-theme</span><span class="attribute">-bootstrap</span>
-</code></pre><p>点击Add[添加]添加用户，设置好用户名、密码，如果有需要，切换到Advanced Settings[高级设置]标签设置连网设备及mac。 然后点击Save[保存],要注意的是，新添加的用户<strong>要点两次Save[保存]</strong>才能在下面的Current user中选择。 点击Save&amp;Appy[保存&amp;应用]连网。 目前无法显示连网状态，如果再次点击Save&amp;Appy[保存&amp;应用]会断网。<br><img src="https://lh3.googleusercontent.com/--gzWhbLOakk/UfARFuNg7RI/AAAAAAAAAY4/gKI80m8qw3g/s0/oh3c_01.png" alt="OH3C_1"><br>要切换用户，只需要在Current user中选择相应的用户，依次点击Save[保存]和Save&amp;Appy[保存&amp;应用]即可。<br><img src="https://lh5.googleusercontent.com/-vjHeqH63uN0/UfARF5FhRxI/AAAAAAAAAY8/bAgbK-oxAC4/s0/oh3c_02.png" alt="OH3C_2"></p>
-<p>需要注意的是，如果你使用的mac绑定功能，这时会修改路由器wan口的mac地址，所以相应时间会久一些，还有极少数情况连接失败，这时请再次点击Save&amp;Appy[保存&amp;应用]。 web版的OH3C连接时不会有屏幕输出信息，但是所有输出信息都保存在/tmp/log/oh3c中，重启路由器后消失，如果使用中遇到问题，可以将此文件中的内容贴出来。</p>
-<p>使用命令行版本的童鞋，先使用ssh登录路由器，输入命令：  </p>
-<pre><code>oh3c
-</code></pre><p>然后按提示操作即可。</p>
-<p>从V0.2开始，OH3C加入了mac设置项，以方便mac绑定的情况，如果你不需要设置mac，命令行版本请在设置帐号要求输入mac时直接回车，web版请保持默认的default，这样该帐号联网时就不会更改mac，而保持之前的mac设置。</p>
-<p>另外，如果你的路由器仅有4M flash，建议自己编译固件，你可以在编译openwrt时去掉和PPP和PPPOE相关的包，这样固件体积会缩小很多。</p>
-<p>如果使用中有任何问题，欢迎反馈：<br><a href="https://code.google.com/p/oh3c/issues/list" target="_blank">https://code.google.com/p/oh3c/issues/list</a></p>
-
+<p>首先要会用ssh登录路由器，但是如果是首次将路由器刷成openwrt或者复位过设置，那么路由器是没有密码，也不会允许ssh登录的，解决方法是使用telnet登录或者web登录设置密码。在windows下面telnet和ssh登录可以使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>。
+      <div class="alignright">
+        <a href="/2012/003.html" class="more-link">阅读全文</a>
+      </div>
+      <div class="clearfix"></div>
     
     
     <footer class="meta">
@@ -283,6 +168,7 @@ opkg install luci<span class="attribute">-theme</span><span class="attribute">-b
   </div>
   
 </article>
+
 
   <article class="post">
   
@@ -329,6 +215,7 @@ opkg install luci<span class="attribute">-theme</span><span class="attribute">-b
   </div>
   
 </article>
+
 
 
 <nav id="pagenavi">
