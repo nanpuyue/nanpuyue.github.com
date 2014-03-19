@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.nanpuyue.com/"/>
-  <updated>2014-03-19T19:04:30.655Z</updated>
+  <updated>2014-03-19T19:11:17.409Z</updated>
   <id>http://blog.nanpuyue.com/</id>
   
   <author>
@@ -686,7 +686,7 @@ echo export <span class="constant">GST_ID3V2_TAG_ENCODING</span>=<span class="co
     <link href="http://blog.nanpuyue.com/2012/002.html"/>
     <id>http://blog.nanpuyue.com/2012/002.html</id>
     <published>2012-03-22T04:00:00.000Z</published>
-    <updated>2014-03-19T18:46:41.000Z</updated>
+    <updated>2014-03-19T19:10:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="搭建编译环境">搭建编译环境</h3>
 <p>Ubuntu x64 12.04下的命令：  </p>
 <pre><code>sudo apt<span class="attribute">-get</span> install subversion
@@ -702,7 +702,7 @@ sudo apt<span class="attribute">-get</span> install libncurses5<span class="attr
 <pre><code>mkdir openwrt
 cd openwrt
 svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
-</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br><a id="more"></a></p>
+</code></pre><p><a id="more"></a>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。</p>
 <h3 id="更新feed及添加package">更新feed及添加package</h3>
 <p>openwrt的一些额外功能都是通过package实现的，很多个package就组成了一个feed，我们可以根据需求更新自己想要的feed的源。 例如我们需要luci的web管理界面和python的支持，那么我们需要更新luci和packages的feed源：  </p>
 <pre><code><span class="built_in">cd</span> trunk
@@ -742,7 +742,7 @@ sudo apt<span class="attribute">-get</span> install libncurses5<span class="attr
 <pre><code>mkdir openwrt
 cd openwrt
 svn co <span class="symbol">svn:</span>/<span class="regexp">/svn.openwrt.org/openwrt</span><span class="regexp">/trunk/</span>
-</code></pre><p>trunk是OpenWrt的开发版，OpenWrt有好几个分支，要编译其它分支，sun://后的换为相应的地址即可。<br>建立openwrt文件夹是为了方便存放不同分支的代码，如果你不需要，可以省略“mkdir openwrt”及“cd openwrt”。<br>如果svn的速度慢，可以使用openwrt的第三方镜像，比如国内的OpenWrt中文论坛所建的镜像。<br>]]></summary>
+</code></pre><p>]]></summary>
     
       <category term="OpenWrt" scheme="http://blog.nanpuyue.com/tags/OpenWrt/"/>
     
